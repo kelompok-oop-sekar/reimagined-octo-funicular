@@ -6,7 +6,7 @@ protected:
 	static char** Map;
 
 public:
-	virtual char Render() = 0;
+	virtual char render() = 0;
 };
 
 #endif
