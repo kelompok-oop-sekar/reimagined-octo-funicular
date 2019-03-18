@@ -6,10 +6,16 @@
 
 # include "MeatProducingFarmAnimal.h"
 # include "MilkProducingFarmAnimal.h"
+# include "../Product/CowMeat.h"
+# include "../Product/CowMilk.h"
+# include "../Product/Product.h"
+
 
 class Cow : public MeatProducingFarmAnimal, public MilkProducingFarmAnimal {
     public :
         ~Cow(); // dtor
+        Product grabMeat();
+        Product grabMilk();
         void move_animal(); // method pergerakan Cow
         void is_hungry(); // menghasilkan true jika Cow dalam keadaan lapar
         void eat();
