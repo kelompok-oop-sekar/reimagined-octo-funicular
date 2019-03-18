@@ -4,20 +4,24 @@
 #include <map>
 #include <string>
 using namespace std;
-
+// 
+// Player merupakan kelas yang mendefinisikan 'command' yang bisa diperintahkan
+// saat menjalankan program.
+//
 class Player : class Renderable {
 private:
     // Wadah air untuk menanam rumput.
     int wateringCan;
+    
+    // Uang.
+    int money;
 
     // Menyimpan barang hasil interaksi dengan ternak.
     map<Product, int> inventory;
 	
 public:
     // ctor dengan kapasitas wadah air default.
-    Player() {
-	    wateringCan = 5;
-    }
+    Player();
 
     // ctor dengan kapasitas wadah air.
     Player(int capacity);
