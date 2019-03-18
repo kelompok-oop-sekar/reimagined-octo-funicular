@@ -9,15 +9,14 @@
 
 class Chicken : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
     private :
-        bool egg;
+        bool egg; // bernilai true jika Buffalo sudah menghasilkan egg dan egg belum diambil oleh player
 
     public :
-        // dtor
-        ~Chicken();
-        void animal_move();
-        void is_hungry();
+        ~Chicken(); // dtor
+        void move_animal(); // method pergerakan Chicken
+        void is_hungry(); // menghasilkan true jika Chicken dalam keadaan lapar
         void eat();
-        void sounding();
+        void sounding(); // menuliskan "Petok.. Petok.." ke layar ketika player melakukan Talk
 };
 
 #endif

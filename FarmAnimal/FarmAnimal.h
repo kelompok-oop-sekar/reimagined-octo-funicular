@@ -15,9 +15,9 @@ class FarmAnimal {
     public :
       // ctor
       FarmAnimal();
-      virtual void move_animal();
-      virtual void is_hungry();
-      virtual void sounding() = 0;
+      virtual void move_animal(); // method pergerakan hewan ternak
+      virtual void is_hungry(); // true jika hewan ternak dalam keadaan lapar
+      virtual void sounding() = 0; // pure virtual yang akan berisi method untuk menampilkan suara hewan
       virtual void eat();
 };
 

@@ -4,20 +4,19 @@
 #ifndef Buffalo_H
 #define Buffalo_H
 
-# include "EggProducingFarmAnimal.h"
+# include "MilkProducingFarmAnimal.h"
 # include "MeatProducingFarmAnimal.h"
 
-class Buffalo : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
+class Buffalo : public MilkProducingFarmAnimal, public MeatProducingFarmAnimal {
     private :
-        bool milk;
+        bool milk; // bernilai true jika Buffalo sudah menghasilkan milk dan milk belum diambil oleh player
         
     public :
-        // dtor
-        ~Buffalo();
-        void animal_move();
-        void is_hungry();
+        ~Buffalo(); // dtor Buffalo
+        void move_animal(); // method pergerakan Buffalo
+        void is_hungry();// menghasilkan true jika Buffalo dalam keadaan lapar
         void eat();
-        void sounding();
+        void sounding(); // menuliskan "MOOOO.." ke layar ketika player melakukan Talk
 };
 
 #endif

@@ -9,16 +9,14 @@
 
 class Sheep : public MeatProducingFarmAnimal, public MilkProducingFarmAnimal {
     private :
-        bool milk;
+        bool milk; // true jika Sheep telah menghasilkan milk dan belum diambil oleh player
 
     public :
-        // dtor
-        // menghasilkan meat
-        ~Sheep();
-        void move_animal();
-        void is_hungry();
+        ~Sheep(); // dtor
+        void move_animal(); // method pergerakan Sheep
+        void is_hungry(); // true jika Sheep dalam keadaan lapar
         void eat();
-        void sounding();
+        void sounding(); // menuliskan "Mbiik.. Mbiik.." ke layar ketika player melakukan Talk
 };
 
 #endif

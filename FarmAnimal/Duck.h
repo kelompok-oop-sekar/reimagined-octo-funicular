@@ -9,15 +9,15 @@
 
 class Duck : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
     private :
-        bool egg;
+        bool egg; // true jika Duck telah bertelur dan player belum mengambil telur
 
     public :
-        // dtor
-        ~Duck();
-        void move_animal();
-        void is_hungry();
+        ~Duck(); // dtor
+        void move_animal(); // method pergerakan Duck
+        void is_hungry(); // true jika Duck dalam keadaan lapar
         void eat();
-        void sounding();
+        void sounding(); // menuliskan "Kwek.. Kwek.." ke layar ketika player melakukan Talk
+
 };
 
 #endif

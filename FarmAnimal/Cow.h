@@ -9,15 +9,14 @@
 
 class Cow : public MeatProducingFarmAnimal, public MilkProducingFarmAnimal {
     private :
-        bool milk;
+        bool milk; // bernilai true jika Cow sudah menghasilkan milk dan milk belum diambil oleh player
 
     public :
-        // dtor 
-        ~Cow();
-        void move_animal();
-        void is_hungry();
+        ~Cow(); // dtor
+        void move_animal(); // method pergerakan Cow
+        void is_hungry(); // menghasilkan true jika Cow dalam keadaan lapar
         void eat();
-        void sounding();
+        void sounding(); // menuliskan "Mooo.. Mooo.." ke layar ketika player melakukan Talk
 };
 
 #endif

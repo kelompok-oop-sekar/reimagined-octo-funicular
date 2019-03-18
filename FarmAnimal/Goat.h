@@ -9,15 +9,14 @@
 
 class Goat : public MeatProducingFarmAnimal, public MilkProducingFarmAnimal {
     private :
-        bool milk;
+        bool milk; // true jika Goat telah menghasilkan milk dan belum diambil oleh player
 
     public :
-        // dtor
-        ~Goat();
-        void move_animal();
-        void is_hungry();
+        ~Goat(); // dtor
+        void move_animal(); // method pergerakan Goat
+        void is_hungry(); // true jika Goat dalam keadaan lapar
         void eat();
-        void sounding();
+        void sounding(); // menuliskan "Mbeek.. Mbeek.." ke layar ketika player melakukan Talk
 };
 
 #endif
