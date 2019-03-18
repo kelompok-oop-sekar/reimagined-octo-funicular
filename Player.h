@@ -14,6 +14,14 @@ private:
     map<Product, int> inventory;
 	
 public:
+    // ctor dengan kapasitas wadah air default.
+    Player() {
+	    wateringCan = 5;
+    }
+
+    // ctor dengan kapasitas wadah air.
+    Player(int capacity);
+
     // Bergerak pada semua "Cell" yang bertipe "Land" selama tidak 
     // ada hewan.
     void move(char direction);
