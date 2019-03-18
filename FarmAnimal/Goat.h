@@ -8,9 +8,6 @@
 # include "MilkProducingFarmAnimal.h"
 
 class Goat : public MeatProducingFarmAnimal, public MilkProducingFarmAnimal {
-    private :
-        bool milk; // true jika Goat telah menghasilkan milk dan belum diambil oleh player
-
     public :
         ~Goat(); // dtor
         void move_animal(); // method pergerakan Goat
