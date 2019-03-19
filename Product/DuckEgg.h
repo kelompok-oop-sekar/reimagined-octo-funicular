@@ -3,14 +3,12 @@
 #ifndef DUCKEGG_H
 #define DUCKEGG_H
 
-#include "Product.h"
+#include "FarmProduct.h"
 //kelas DuckEgg adalah nama kelas dari objek objek telur bebek
-class DuckEgg : public Product{
+class DuckEgg : public FarmProduct{
 private:
-	static int n; //Jumlah dari DuckEgg yang dimiliki pemain saat ini
 	static int price; //Harga DuckEgg setiap satuannya
 public:
-	static int getNProduct(); //Mengembalikan jumlah dari telur bebek yang dimiliki oleh pemain
 	static int getPrice(); //mengembalikan harga dari telur bebek setiap satuannya
 	~DuckEgg();
 };
