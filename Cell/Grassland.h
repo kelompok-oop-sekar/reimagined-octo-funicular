@@ -12,9 +12,9 @@ class Grassland : public Land {
 		 * _y merepresentasikan posisi Grassland dalam sumbu y (vertikal) 
 		 * _grass merepresentasikan apakah Grassland merupakan Land berumput atau tidak */
 		char render();// Hasil render adalah "-" jika tidak berumput, "#" jika berumput
-		bool isWithGrass();// Menghasilkan true jika Grassland berumput
-		void removeGrass();// Menghapus rumput. Mengembalikan "#" menjadi "-"
-		void setBerumput(bool _berumput); //Set rumput pada Grassland
+		//bool isWithGrass();// Menghasilkan true jika Grassland berumput
+		//void removeGrass();// Menghapus rumput. Mengembalikan "#" menjadi "-"
+		//void setGrass(); //Set rumput pada Grassland
 };
 
 #endif

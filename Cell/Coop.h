@@ -12,9 +12,9 @@ class Coop : public Land {
 		 * _y merepresentasikan posisi Coop dalam sumbu y (vertikal) 
 		 * _grass merepresentasikan apakah Coop merupakan Land berumput atau tidak*/
 		char render(); // Hasil render adalah "o" jika tidak berumput, "*" jika berumput
-		bool isWithGrass(); //Menghasilkan true jika Coop berumput
-		void removeGrass(); //Menghapus rumput. Mengembalikan "*" menjadi "o"
-		void setBerumput(bool _berumput); //Set rumput pada Coop
+		//bool isWithGrass(); //Menghasilkan true jika Coop berumput
+		//void removeGrass(); //Menghapus rumput. Mengembalikan "*" menjadi "o"
+		//void setGrass(); //Set rumput pada Coop
 };
 
 #endif

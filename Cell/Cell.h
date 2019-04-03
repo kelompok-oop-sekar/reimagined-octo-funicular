@@ -1,6 +1,6 @@
 #ifndef _CELL_H_
 #define _CELL_H_
-#include "Renderable.h"
+#include "../Renderable.h"
 //Class cell merupakan parent dari kelas Facility dan kelas Land
 //Class cell meupakan turunan dari Renderable
 class Cell : public Renderable{

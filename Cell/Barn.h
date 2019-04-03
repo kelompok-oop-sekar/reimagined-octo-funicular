@@ -12,9 +12,9 @@ class Barn : public Land {
 		 * _y merepresentasikan posisi Barn dalam sumbu y (vertikal) 
 		 * _grass merepresentasikan apakah Barn merupakan Land berumput atau tidak*/
 		char render(); // Hasil render adalah "x" jika tidak berumput, "@" jika berumput
-		bool isWithGrass();// Menghasilkan true jika Barn berumput
-		void removeGrass(); //Menghapus rumput. Mengembalikan "@" menjadi "x"
-		void setBerumput(bool _berumput); //Set rumput pada Barn
+		//bool isWithGrass();// Menghasilkan true jika Barn berumput
+		//void removeGrass(); //Menghapus rumput. Mengembalikan "@" menjadi "x"
+		//void setGrass(); //Set rumput pada Barn
 
 		
 };
