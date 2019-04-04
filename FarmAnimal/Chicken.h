@@ -11,12 +11,14 @@
 # include "../Product/Product.h"
 
 class Chicken : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
+    private :
+        int tickHungry;
     public :
         ~Chicken(); // dtor
         Product grabMeat();
         Product grabEgg();
-        void move_animal(); // method pergerakan Chicken
-        void is_hungry(); // menghasilkan true jika Chicken dalam keadaan lapar
+        void moveAnimal(); // method pergerakan Chicken
+        bool isHungry(); // menghasilkan true jika Chicken dalam keadaan lapar
         void eat();
         void sounding(); // menuliskan "Petok.. Petok.." ke layar ketika player melakukan Talk
 };

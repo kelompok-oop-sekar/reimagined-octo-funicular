@@ -4,21 +4,35 @@
 #ifndef FARMANIMAL_H
 #define FARMANIMAL_H
 
+# include "../Product/Product.h"
+# include "../Renderable.h"
+# include "../Cell/Cell.h"
 
+// Kelas FarmAnimal merupakan turunan dari kelas Renderable
 class FarmAnimal {
     protected :
-      int X; // posisi FarmAnimal pada sumbu X
-      int Y; // posisi FarmAnimal pada sumbu Y
-      int tick_to_die;
-      int tick_to_hungry;
+      int x; // merepresentasikan koordinat sumbu x
+      int y; // merepresentasikan koordinat sumbu y
+      /* jumlah tick maksimum FarmAnimal kelaparan
+         tickDie akan berkurang jumlahnya setiap hewan bergerak dan tidak menemukan rumput
+         jika tickDie = 0, maka FarmAnimal mati kelaparan */
+      int tickDie; 
 
     public :
       // ctor
-      FarmAnimal();
-      virtual void move_animal(); // method pergerakan hewan ternak
-      virtual void is_hungry(); // true jika hewan ternak dalam keadaan lapar
-      virtual void sounding() = 0; // pure virtual yang akan berisi method untuk menampilkan suara hewan
+      FarmAnimal(int _x, int _y);
+      // dtor
+      ~FarmAnimal();
+      // method pergerakan hewan ternak
+      //virtual void moveAnimal()=0; 
+      // true jika hewan ternak dalam keadaan lapar
+      //virtual void isHungry()=0;
+      // prosedur untuk menampilkan suara hewan
+      //virtual void sounding()=0;
+      // prosedur memakan rumput jika land yang dipijak berumput
       virtual void eat();
+      // propedur menghasilkan farmproduct
+      //virtual void produceProduct()=0;
 };
 
 #endif
