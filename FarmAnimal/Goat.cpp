@@ -2,18 +2,19 @@
 # include "Goat.h"
 using namespace std;
 
-Goat::~Goat() // dtor
-[
-    cout << "Goat die" << endl;
-]
-Product Goat::grabMeat()
+Goat::Goat(int _x, int _y) : MilkProducingFarmAnimal(_x,_y,false) , MeatProducingFarmAnimal(_x,_y,false)
 {
-    // ?
+    tickDie = 5;
+    tickHungry = 8;
 }
-Product Goat::grabMilk()
-{
-    // ?
-}
+// Product Goat::grabMeat()
+// {
+//     // return product??
+// }
+// Product Goat::grabMilk()
+// {
+//     // return product??
+// }
 void Goat::moveAnimal() // method pergerakan Goat
 {
     // ?
@@ -29,4 +30,12 @@ void Goat::eat()
 void Goat::sounding() // menuliskan "Mbeek.. Mbeek.." ke layar ketika player melakukan Talk
 {
     cout << "Mbeek.. Mbeek.." << endl;
+}
+void Goat::die()
+{
+    cout << "Goat die" << endl;
+}
+void Goat::killed()
+{
+    MeatProducingFarmAnimal::setMeat(true);
 }

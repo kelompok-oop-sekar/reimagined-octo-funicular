@@ -5,9 +5,13 @@
 # include "EggProducingFarmAnimal.h"
 using namespace std;
 
-void EggProducingFarmAnimal::setEgg(bool state)
+EggProducingFarmAnimal::EggProducingFarmAnimal(int _x, int _y, bool _egg) : FarmAnimal(_x, _y) {
+    egg = _egg;
+}
+
+void EggProducingFarmAnimal::setEgg(bool _egg)
 {
-    egg = state;
+    egg = _egg;
 }
 
 bool EggProducingFarmAnimal::getEgg()

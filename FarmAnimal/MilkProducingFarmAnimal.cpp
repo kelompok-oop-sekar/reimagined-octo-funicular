@@ -2,9 +2,12 @@
 # include "MilkProducingFarmAnimal.h"
 using namespace std;
 
-void MilkProducingFarmAnimal::setMilk(bool state)
+MilkProducingFarmAnimal::MilkProducingFarmAnimal(int _x, int _y, bool _milk) : FarmAnimal(_x, _y) {
+    milk = _milk;
+}
+void MilkProducingFarmAnimal::setMilk(bool _milk)
 {
-    milk = state;
+    milk = _milk;
 }
 bool MilkProducingFarmAnimal::getMilk()
 {

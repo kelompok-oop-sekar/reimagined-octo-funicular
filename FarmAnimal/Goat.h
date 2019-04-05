@@ -13,14 +13,25 @@
 class Goat : public MeatProducingFarmAnimal, public MilkProducingFarmAnimal {
     private :
         int tickHungry;
+        int tickDie;
     public :
-        ~Goat(); // dtor
-        Product grabMeat();
-        Product grabMilk();
+        /* ctor
+            _x merepresentasikan koordinat sumbu x
+            _y merepresentasikan koordinat sumbu y
+            */
+        Goat(int _x, int _y);
+        // Product grabMeat();
+        // Product grabMilk();
         void moveAnimal(); // method pergerakan Goat
         bool isHungry(); // true jika Goat dalam keadaan lapar
         void eat();
         void sounding(); // menuliskan "Mbeek.. Mbeek.." ke layar ketika player melakukan Talk
+        /* Mekanisme ayam mati :
+            1. Mati karena kelaparan : ketika isHungry return true dan tickDie = 0 (void die)
+            2. Mati karena dipotong player (void killed)
+            */
+        void die();
+        void killed();
 };
 
 #endif

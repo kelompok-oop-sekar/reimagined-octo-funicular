@@ -11,9 +11,15 @@ class MilkProducingFarmAnimal : public FarmAnimal{
     private :
         bool milk;
     public :
-        virtual Product grabMilk() = 0;
-        void setMilk(bool state);
+        /* ctor
+            _x merepresentasikan koordinat sumbu x
+            _y merepresentasikan koordinat sumbu y
+            _meat merepresentasikan apakah hewan ternak sedang menghasikan daging atau tidak
+            */
+        MilkProducingFarmAnimal(int _x, int _y, bool _milk);
+        void setMilk(bool _milk);
         bool getMilk();
+        virtual Product grabMilk() = 0;
 
 };
 

@@ -13,15 +13,21 @@
 class Duck : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
     private :
         int tickHungry;
+        int tickDie;
     public :
-        ~Duck(); // dtor
-        Product grabMeat();
-        Product grabEgg();
+        /* ctor
+            _x merepresentasikan koordinat sumbu x
+            _y merepresentasikan koordinat sumbu y
+            */
+        Duck(int _x, int _y);
+        // Product grabMeat();
+        // Product grabEgg();
         void moveAnimal(); // method pergerakan Duck
         bool isHungry(); // true jika Duck dalam keadaan lapar
         void eat();
         void sounding(); // menuliskan "Kwek.. Kwek.." ke layar ketika player melakukan Talk
-
+        void die();
+        void killed();
 };
 
 #endif

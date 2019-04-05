@@ -2,18 +2,19 @@
 # include "Sheep.h"
 using namespace std;
 
-Sheep::~Sheep() // dtor
-[
-    cout << "Sheep die" << endl;
-]
-Product Sheep::grabMeat()
+Sheep::Sheep(int _x, int _y) : MilkProducingFarmAnimal(_x,_y,false) , MeatProducingFarmAnimal(_x,_y,false)
 {
-    // ?
+    tickDie = 5;
+    tickHungry = 8;
 }
-Product Sheep::grabMilk()
-{
-    // ?
-}
+// Product Sheep::grabMeat()
+// {
+//     // return product??
+// }
+// Product Sheep::grabMilk()
+// {
+//     // return product??
+// }
 void Sheep::moveAnimal() // method pergerakan Sheep
 {
     // ?
@@ -29,4 +30,12 @@ void Sheep::eat()
 void Sheep::sounding() // menuliskan "Mbeek.. Mbeek.." ke layar ketika player melakukan Talk
 {
     cout << "Mbiik.. Mbiik.." << endl;
+}
+void Sheep::die()
+{
+    cout << "Sheep die" << endl;
+}
+void Sheep::killed()
+{
+    MeatProducingFarmAnimal::setMeat(true);
 }
