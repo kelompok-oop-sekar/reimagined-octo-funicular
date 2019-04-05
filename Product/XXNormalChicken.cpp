@@ -1,6 +1,6 @@
 #include "XXNormalChicken.h"
 
-string XXNormalChicken::ingredients[] = { "ChickenMeat", "ChickenEgg" };
+const string XXNormalChicken::ingredients[] = { "ChickenMeat", "ChickenEgg" };
 
 int XXNormalChicken::price = 0;
 

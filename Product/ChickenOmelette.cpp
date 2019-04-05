@@ -1,6 +1,6 @@
 #include "ChickenOmelette.h"
 
-string ChickenOmelette::ingredients[] = { "Milk", "Milk" };
+const string ChickenOmelette::ingredients[] = { "Milk", "Milk" };
 
 int ChickenOmelette::price = 0;
 
