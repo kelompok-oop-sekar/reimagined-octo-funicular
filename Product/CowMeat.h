@@ -1,4 +1,4 @@
-s//Nama file : CowMeat.h
+//Nama file : CowMeat.h
 
 #ifndef COWMEAT_H
 #define COWMEAT_H

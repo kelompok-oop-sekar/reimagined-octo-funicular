@@ -9,7 +9,7 @@ class GoatMilk : public FarmProduct {
 private:
 	static int price; //harga dari CowMilk setiap satuannya 
 public:
-	static int GetPrice(); //mengembalikan harga dari CowMilk setiap satuannya
+	static int getPrice(); //mengembalikan harga dari CowMilk setiap satuannya
 };
 
 #endif

@@ -1,6 +1,6 @@
 #include "Cheese.h"
 
-string Cheese::ingredients[] = { "Milk", "Milk" };
+string Cheese::ingredients[2] = { "Milk", "Milk" };
 
 int Cheese::price = 0;
 
