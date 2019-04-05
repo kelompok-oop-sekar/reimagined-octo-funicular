@@ -4,11 +4,16 @@
 # include "Chicken.h"
 using namespace std;
 
-// inisialisasi class member static
+string Chicken::className = "Chicken";
+
 Chicken::Chicken(int _x, int _y) : EggProducingFarmAnimal(_x,_y,false) , MeatProducingFarmAnimal(_x,_y,false) , FarmAnimal(_x,_y)
 {
     tickDie = 5;
     tickHungry = 7;
+}
+string Chicken::getClassName()
+{
+    return className;
 }
 void Chicken::moveAnimal() // method pergerakan Chicken
 {
@@ -37,7 +42,9 @@ bool Chicken::isHungry() // menghasilkan true jika Chicken dalam keadaan lapar
 }
 void Chicken::eat()
 {
-    // ??
+    if (!EggProducingFarmAnimal::milk) {
+       EggProducingFarmAnimal::milk == true;
+   }
 }
 void Chicken::sounding() // menuliskan "Petok.. Petok.." ke layar ketika player melakukan Talk
 {

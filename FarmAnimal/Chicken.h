@@ -6,12 +6,10 @@
 
 # include "EggProducingFarmAnimal.h"
 # include "MeatProducingFarmAnimal.h"
-// # include "../Product/ChickenMeat.h"
-// # include "../Product/ChickenEgg.h"
-// # include "../Product/Product.h"
 
 class Chicken : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
     private :
+        static string className;
         int tickHungry;
         int tickDie;
     public :
@@ -20,6 +18,11 @@ class Chicken : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
             _y merepresentasikan koordinat sumbu y
             */
         Chicken(int _x, int _y);
+        static string getClassName();
+        string callGetClassName() {
+            string a = getClassName();
+            return a;
+        }
         void moveAnimal(); // method pergerakan Chicken
         bool isHungry(); // menghasilkan true jika Chicken dalam keadaan lapar
         void eat();

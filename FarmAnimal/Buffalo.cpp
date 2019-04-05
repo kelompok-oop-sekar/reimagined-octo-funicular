@@ -4,23 +4,49 @@
 # include "Buffalo.h"
 using namespace std;
 
+string Buffalo::className = "Buffalo";
+
 Buffalo::Buffalo (int _x, int _y) : MilkProducingFarmAnimal(_x,_y,false) , MeatProducingFarmAnimal(_x,_y,false) , FarmAnimal(_x,_y) {
     tickDie = 5;
     tickHungry = 10;
 }
+string Buffalo::getClassName()
+{
+    return className;
+}
 void Buffalo::moveAnimal() // method pergerakan Buffalo
 {
-    srand((unsigned)time(0));
-    int randomX;
-    int randomY;
-    int rangeX = (6-0+1);
-    int rangeY = (8-0+1);
-    
-    randomX = 0+int(rangeX*rand()/RAND_MAX + 1.0);
-    randomY = 0+int(rangeY*rand()/RAND_MAX + 1.0);
+    int randomVal = 1 + rand() % 4;
 
-    FarmAnimal::x = randomX;
-    FarmAnimal::y = randomY;
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
 
     if (tickHungry>0) {
         tickHungry--;
@@ -35,7 +61,9 @@ bool Buffalo::isHungry()// menghasilkan true jika Buffalo dalam keadaan lapar
 }
 void Buffalo::eat()
 {
-    // jika grassland, ubah cell grassland; ubah milk; render milk
+   if (!MilkProducingFarmAnimal::milk) {
+       MilkProducingFarmAnimal::milk == true;
+   }
 }
 void Buffalo::sounding() // menuliskan "MOOOO.." ke layar ketika player melakukan Talk
 {

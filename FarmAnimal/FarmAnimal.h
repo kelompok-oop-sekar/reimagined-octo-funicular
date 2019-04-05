@@ -4,9 +4,10 @@
 #ifndef FARMANIMAL_H
 #define FARMANIMAL_H
 
-// # include "../Product/Product.h"
+# include <string>
 # include "../Renderable.h"
-// # include "../Cell/Cell.h"
+using namespace std;
+
 
 // Kelas FarmAnimal merupakan turunan dari kelas Renderable
 class FarmAnimal : public Renderable {
@@ -21,8 +22,8 @@ class FarmAnimal : public Renderable {
     public :
       // ctor
       FarmAnimal(int _x, int _y);
-      // dtor
-      // ~FarmAnimal();
+      int getX();
+      int getY();
       // method pergerakan hewan ternak
       virtual void moveAnimal()=0; 
       // true jika hewan ternak dalam keadaan lapar
@@ -31,6 +32,7 @@ class FarmAnimal : public Renderable {
       virtual void sounding()=0;
       // prosedur memakan rumput jika land yang dipijak berumput
       virtual void eat()=0;
+      virtual string callGetClassName() = 0;
 };
 
 #endif

@@ -7,9 +7,11 @@
 # include "MilkProducingFarmAnimal.h"
 # include "MeatProducingFarmAnimal.h"
 # include "../Renderable.h"
+using namespace std;
 
 class Buffalo : public MilkProducingFarmAnimal, public MeatProducingFarmAnimal {
     private :
+        static string className;
         int tickHungry;
         int tickDie;
     public :
@@ -18,6 +20,11 @@ class Buffalo : public MilkProducingFarmAnimal, public MeatProducingFarmAnimal {
             _y merepresentasikan koordinat sumbu y
             */
         Buffalo(int _x, int _y);
+        static string getClassName();
+        string callGetClassName() {
+            string a = getClassName();
+            return a;
+        }
         void moveAnimal(); // method pergerakan Buffalo
         bool isHungry();// menghasilkan true jika Buffalo dalam keadaan lapar
         void eat();

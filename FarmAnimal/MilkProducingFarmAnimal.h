@@ -5,10 +5,9 @@
 #define MILKPRODUCINGFARMANIMAL_H
 
 # include "FarmAnimal.h"
-# include "../Product/Product.h"
 
 class MilkProducingFarmAnimal : public virtual FarmAnimal{
-    private :
+    protected :
         bool milk;
     public :
         /* ctor

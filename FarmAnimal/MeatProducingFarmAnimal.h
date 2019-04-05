@@ -5,7 +5,6 @@
 #define MEATPRODUCINGFARMANIMAL_H
 
 # include "FarmAnimal.h"
-# include "../Product/Product.h"
 
 class MeatProducingFarmAnimal : public virtual FarmAnimal{
     protected :

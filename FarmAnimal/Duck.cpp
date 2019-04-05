@@ -2,10 +2,16 @@
 # include "Duck.h"
 using namespace std;
 
+string Duck::className = "Duck";
+
 Duck::Duck(int _x, int _y) : EggProducingFarmAnimal(_x,_y,false) , MeatProducingFarmAnimal(_x,_y,false) , FarmAnimal(_x,_y)
 {
     tickDie = 5;
     tickHungry = 7;
+}
+string Duck::getClassName()
+{
+    return className;
 }
 void Duck::moveAnimal() // method pergerakan Duck
 {
@@ -34,7 +40,9 @@ bool Duck::isHungry() // true jika Duck dalam keadaan lapar
 }
 void Duck::eat()
 {
-    // ??
+    if (!EggProducingFarmAnimal::milk) {
+       EggProducingFarmAnimal::milk == true;
+   }
 }
 void Duck::sounding() // menuliskan "Kwek.. Kwek.." ke layar ketika player melakukan Talk
 {

@@ -6,12 +6,11 @@
 
 # include "MeatProducingFarmAnimal.h"
 # include "MilkProducingFarmAnimal.h"
-# include "../Product/SheepMilk.h"
-# include "../Product/SheepMeat.h"
-# include "../Product/Product.h"
+using namespace std;
 
 class Sheep : public MeatProducingFarmAnimal, public MilkProducingFarmAnimal {
     private :
+        static string className;
         int tickHungry;
         int tickDie;
     public :
@@ -20,6 +19,11 @@ class Sheep : public MeatProducingFarmAnimal, public MilkProducingFarmAnimal {
             _y merepresentasikan koordinat sumbu y
             */
         Sheep(int _x, int _y);
+        static string getClassName();
+        string callGetClassName() {
+            string a = getClassName();
+            return a;
+        }
         void moveAnimal(); // method pergerakan Sheep
         bool isHungry(); // true jika Sheep dalam keadaan lapar
         void eat();

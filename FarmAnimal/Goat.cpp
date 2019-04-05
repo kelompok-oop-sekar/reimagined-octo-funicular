@@ -4,10 +4,16 @@
 # include "Goat.h"
 using namespace std;
 
-Goat::Goat(int _x, int _y) : MilkProducingFarmAnimal(_x,_y,false) , MeatProducingFarmAnimal(_x,_y,false)
+string Goat::className = "Goat";
+
+Goat::Goat(int _x, int _y) : MilkProducingFarmAnimal(_x,_y,false) , MeatProducingFarmAnimal(_x,_y,false), FarmAnimal(_x,_y)
 {
     tickDie = 5;
     tickHungry = 8;
+}
+string Goat::getClassName()
+{
+    return className;
 }
 void Goat::moveAnimal() // method pergerakan Goat
 {
@@ -36,7 +42,9 @@ bool Goat::isHungry() // true jika Goat dalam keadaan lapar
 }
 void Goat::eat()
 {
-    // ?
+    if (!MilkProducingFarmAnimal::milk) {
+       MilkProducingFarmAnimal::milk == true;
+   }
 }
 void Goat::sounding() // menuliskan "Mbeek.. Mbeek.." ke layar ketika player melakukan Talk
 {

@@ -11,8 +11,11 @@ FarmAnimal::FarmAnimal(int _x, int _y)
     x = _x;
     y = _y;
 }
-// dtor
-// FarmAnimal::~FarmAnimal()
-// {
-//     cout << "Hewan ternak mati" << endl;
-// }
+int FarmAnimal::getX()
+{
+    return x;
+}
+int FarmAnimal::getY()
+{
+    return y;
+}

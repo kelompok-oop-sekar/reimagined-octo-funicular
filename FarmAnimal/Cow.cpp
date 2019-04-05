@@ -9,6 +9,13 @@ Cow::Cow(int _x, int _y) : MilkProducingFarmAnimal(_x,_y,false) , MeatProducingF
     tickDie = 5;
     tickHungry = 10;
 }
+
+string Cow::className = "Cow";
+
+string Cow::getClassName() {
+	return className;
+}
+
 void Cow::moveAnimal() // method pergerakan Cow
 {
     srand((unsigned)time(0));
@@ -36,7 +43,9 @@ bool Cow::isHungry() // menghasilkan true jika Cow dalam keadaan lapar
 }
 void Cow::eat()
 {
-    // ??
+    if (!MilkProducingFarmAnimal::milk) {
+        MilkProducingFarmAnimal::milk = true;
+    }
 }
 void Cow::sounding() // menuliskan "Mooo.. Mooo.." ke layar ketika player melakukan Talk
 {

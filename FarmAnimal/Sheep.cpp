@@ -2,12 +2,17 @@
 # include <cstdlib>
 # include <ctime>
 # include "Sheep.h"
-using namespace std;
+
+string Sheep::className = "Sheep";
 
 Sheep::Sheep(int _x, int _y) : MilkProducingFarmAnimal(_x,_y,false) , MeatProducingFarmAnimal(_x,_y,false) , FarmAnimal(_x,_y)
 {
     tickDie = 5;
     tickHungry = 8;
+}
+string Sheep::getClassName()
+{
+    return className;
 }
 void Sheep::moveAnimal() // method pergerakan Sheep
 {
@@ -36,7 +41,9 @@ bool Sheep::isHungry() // true jika Sheep dalam keadaan lapar
 }
 void Sheep::eat()
 {
-    // ?
+    if (!MilkProducingFarmAnimal::milk) {
+       MilkProducingFarmAnimal::milk == true;
+   }
 }
 void Sheep::sounding() // menuliskan "Mbeek.. Mbeek.." ke layar ketika player melakukan Talk
 {
