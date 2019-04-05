@@ -9,6 +9,11 @@ EggProducingFarmAnimal::EggProducingFarmAnimal(int _x, int _y, bool _egg) : Farm
     egg = _egg;
 }
 
+void EggProducingFarmAnimal::grabEgg()
+{
+    egg = false;
+}
+
 void EggProducingFarmAnimal::setEgg(bool _egg)
 {
     egg = _egg;

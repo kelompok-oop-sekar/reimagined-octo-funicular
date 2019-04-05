@@ -20,8 +20,6 @@ class Chicken : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
             _y merepresentasikan koordinat sumbu y
             */
         Chicken(int _x, int _y);
-        // Product grabMeat();
-        // Product grabEgg();
         void moveAnimal(); // method pergerakan Chicken
         bool isHungry(); // menghasilkan true jika Chicken dalam keadaan lapar
         void eat();
@@ -30,8 +28,6 @@ class Chicken : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
             1. Mati karena kelaparan : ketika isHungry return true dan tickDie = 0 (void die)
             2. Mati karena dipotong player (void killed)
             */
-        void die();
-        void killed();
 };
 
 #endif

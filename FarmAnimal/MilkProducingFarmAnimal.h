@@ -7,7 +7,7 @@
 # include "FarmAnimal.h"
 # include "../Product/Product.h"
 
-class MilkProducingFarmAnimal : public FarmAnimal{
+class MilkProducingFarmAnimal : virtual public FarmAnimal{
     private :
         bool milk;
     public :
@@ -19,7 +19,7 @@ class MilkProducingFarmAnimal : public FarmAnimal{
         MilkProducingFarmAnimal(int _x, int _y, bool _milk);
         void setMilk(bool _milk);
         bool getMilk();
-        virtual Product grabMilk() = 0;
+        void grabMilk();
 
 };
 

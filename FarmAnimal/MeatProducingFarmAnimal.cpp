@@ -13,3 +13,7 @@ bool MeatProducingFarmAnimal::getMeat()
 {
     return meat;
 }
+void MeatProducingFarmAnimal::grabMeat()
+{
+    meat = false;
+}

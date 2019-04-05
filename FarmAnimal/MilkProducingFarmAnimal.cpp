@@ -13,3 +13,7 @@ bool MilkProducingFarmAnimal::getMilk()
 {
     return milk;
 }
+void MilkProducingFarmAnimal::grabMilk()
+{
+    milk = false;
+}

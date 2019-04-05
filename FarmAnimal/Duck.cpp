@@ -21,6 +21,12 @@ void Duck::moveAnimal() // method pergerakan Duck
     // case : kiri
     // case : atas
     // case : bawah
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
 }
 bool Duck::isHungry() // true jika Duck dalam keadaan lapar
 {
@@ -33,12 +39,4 @@ void Duck::eat()
 void Duck::sounding() // menuliskan "Kwek.. Kwek.." ke layar ketika player melakukan Talk
 {
     cout << "Kwek.. Kwek.." << endl;
-}
-void Duck::die()
-{
-    cout << "Duck die" << endl;
-}
-void Duck::killed()
-{
-    MeatProducingFarmAnimal::setMeat(true);
 }

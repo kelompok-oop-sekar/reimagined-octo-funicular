@@ -7,17 +7,15 @@ Goat::Goat(int _x, int _y) : MilkProducingFarmAnimal(_x,_y,false) , MeatProducin
     tickDie = 5;
     tickHungry = 8;
 }
-// Product Goat::grabMeat()
-// {
-//     // return product??
-// }
-// Product Goat::grabMilk()
-// {
-//     // return product??
-// }
 void Goat::moveAnimal() // method pergerakan Goat
 {
     // ?
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
 }
 bool Goat::isHungry() // true jika Goat dalam keadaan lapar
 {
@@ -30,12 +28,4 @@ void Goat::eat()
 void Goat::sounding() // menuliskan "Mbeek.. Mbeek.." ke layar ketika player melakukan Talk
 {
     cout << "Mbeek.. Mbeek.." << endl;
-}
-void Goat::die()
-{
-    cout << "Goat die" << endl;
-}
-void Goat::killed()
-{
-    MeatProducingFarmAnimal::setMeat(true);
 }

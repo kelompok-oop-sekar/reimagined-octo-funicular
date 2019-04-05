@@ -7,20 +7,18 @@ Cow::Cow(int _x, int _y) : MilkProducingFarmAnimal(_x,_y,false) , MeatProducingF
     tickDie = 5;
     tickHungry = 10;
 }
-// Product Cow::grabMeat()
-// {
-//     // ??
-// }
-// Product Cow::grabMilk()
-// {
-//     // ??
-// }
 void Cow::moveAnimal() // method pergerakan Cow
 {
     // case : kanan
     // case : kiri
     // case : atas
     // case : bawah
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
 }
 bool Cow::isHungry() // menghasilkan true jika Cow dalam keadaan lapar
 {
@@ -33,12 +31,4 @@ void Cow::eat()
 void Cow::sounding() // menuliskan "Mooo.. Mooo.." ke layar ketika player melakukan Talk
 {
     cout << "Mooo.. Mooo.." << endl;
-}
-void Cow::die()
-{
-    cout << "Cow die" << endl;
-}
-void Cow::killed()
-{
-    MeatProducingFarmAnimal::setMeat(true);
 }

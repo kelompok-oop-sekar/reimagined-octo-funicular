@@ -7,20 +7,18 @@ Buffalo::Buffalo(int _x, int _y) : MilkProducingFarmAnimal(_x,_y,false) , MeatPr
     tickDie = 5;
     tickHungry = 10;
 }
-// Product Buffalo::grabMeat()
-// {
-//     // return product??
-// }
-// Product Buffalo::grabMilk()
-// {
-//     // return product??
-// }
 void Buffalo::moveAnimal() // method pergerakan Buffalo
 {
     // case : kanan
     // case : kiri
     // case : atas
     // case : bawah
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
 }
 bool Buffalo::isHungry()// menghasilkan true jika Buffalo dalam keadaan lapar
 {
@@ -33,12 +31,4 @@ void Buffalo::eat()
 void Buffalo::sounding() // menuliskan "MOOOO.." ke layar ketika player melakukan Talk
 {
     cout << "MOOOO.." << endl;
-}
-void Buffalo::die()
-{
-    cout << "Buffalo die" << endl;
-}
-void Buffalo::killed()
-{
-    MeatProducingFarmAnimal::setMeat(true);
 }

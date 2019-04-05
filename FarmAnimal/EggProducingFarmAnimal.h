@@ -5,7 +5,7 @@
 #define EGGPRODUCINGFARMANIMAL_H
 
 # include "FarmAnimal.h"
-// # include "../Product/Product.h"
+# include "../Product/Product.h"
 
 class EggProducingFarmAnimal : virtual public FarmAnimal{
     protected :
@@ -17,7 +17,7 @@ class EggProducingFarmAnimal : virtual public FarmAnimal{
             _egg merepresentasikan apakah hewan ternak sedang menghasikan telur atau tidak
             */
         EggProducingFarmAnimal(int _x, int _y, bool _egg);
-        virtual Product grabEgg() = 0;
+        void grabEgg();
         void setEgg(bool _egg);
         bool getEgg();
 };

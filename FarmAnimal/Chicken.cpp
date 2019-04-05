@@ -8,20 +8,18 @@ Chicken::Chicken(int _x, int _y) : EggProducingFarmAnimal(_x,_y,false) , MeatPro
     tickDie = 5;
     tickHungry = 7;
 }
-// Product Chicken::grabMeat()
-// {
-//     // ??
-// }
-// Product Chicken::grabEgg()
-// {
-//     // ??
-// }
 void Chicken::moveAnimal() // method pergerakan Chicken
 {
     // case : kanan
     // case : kiri
     // case : atas
     // case : bawah
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
 }
 bool Chicken::isHungry() // menghasilkan true jika Chicken dalam keadaan lapar
 {
@@ -34,12 +32,4 @@ void Chicken::eat()
 void Chicken::sounding() // menuliskan "Petok.. Petok.." ke layar ketika player melakukan Talk
 {
     cout << "Petok.. Petok.." << endl;
-}
-void Chicken::die()
-{
-    cout << "Chicken die" << endl;
-}
-void Chicken::killed()
-{
-    MeatProducingFarmAnimal::setMeat(true);
 }

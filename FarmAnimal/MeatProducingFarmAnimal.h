@@ -19,7 +19,7 @@ class MeatProducingFarmAnimal : virtual public FarmAnimal{
         MeatProducingFarmAnimal(int _x, int _y, bool _meat);
         void setMeat(bool _meat);
         bool getMeat();
-        virtual Product grabMeat() = 0;
+        void grabMeat();
 };
 
 #endif
