@@ -10,7 +10,6 @@ private:
 	static int price; //Harga DuckEgg setiap satuannya
 public:
 	static int getPrice(); //mengembalikan harga dari telur bebek setiap satuannya
-	~DuckEgg();
 };
 
 #endif

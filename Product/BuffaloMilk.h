@@ -12,7 +12,6 @@ private:
 public:
 	static int getNProduct(); //mengembalikan jumlah buffalomeat yang dimiliki player
 	static int getPrice(); // mengembalikan harga buffalomeat jika terjual
-	~BuffaloMilk();
 };
 
 #endif

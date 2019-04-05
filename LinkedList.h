@@ -1,16 +1,47 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
+#include <string>
+#include <typeinfo>
+
 template <class T>
 class LinkedList {
 private:
-	T* data;
+	T data[50];
+	int size;
 public:
-	int find(T elmt);
-	bool isEmpty();
-	void add(T elmt);
-	void remove(T elmt);
-	T get(int i);
+	LinkedList() {
+		size = 0;
+	}
+
+	int find(string elmt) {
+		if (size > 0) {
+			for (int i = 0; i < size; i++) {
+				if (typeid(data[i]).name() == elmt) {
+					return i;
+				}
+			}
+		}
+		else {
+			return -1;
+		}
+	}
+
+	bool isEmpty() {
+		return size == 0;
+	}
+	void add(T elmt) {
+		data[size] = T;
+		size++;
+	}
+	void remove(int idx) {
+		for (int i = idx; i < size; i++) {
+			data[i] = data[i + 1];
+		}
+	}
+	T get(int i) {
+		return data[i];
+	}
 };
 
 #endif

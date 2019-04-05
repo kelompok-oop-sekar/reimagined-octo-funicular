@@ -1,11 +1,11 @@
-//Nama File : CowMilk.h
+//Nama File : GoatMilk.h
 
-#ifndef COWMILK_H
-#define COWMILK_H
+#ifndef GOATMILK_H
+#define GOATMILK_H
 
 #include "FarmProduct.h"
 //CowMilk merupakan nama kelas dari objek susu sapi yang bisa didapat pemain saat bermain
-class CowMilk : public FarmProduct{
+class GoatMilk : public FarmProduct {
 private:
 	static int price; //harga dari CowMilk setiap satuannya 
 public:

@@ -1,17 +1,17 @@
-//Namafile = Cheese.h
+//Nama File : Cheese.h
 
 #ifndef CHEESE_H
 #define CHEESE_H
 
 #include "SideProduct.h"
-//Kelas Cheese adalah side product yang bisa didapat dari hasil mix antara 2 CowMilk
-class Cheese : public SideProduct{
+//Cheese adalah nama kelas dari makanan yang terinspirasi dari menu ayam penyet XXNormal yang terdiri dari telur dan ayam
+class Cheese : public SideProduct {
 private:
-	static string ingredients[2] = { "CowMilk", "CowMilk" }; // Farm product yang dibutuhkan untuk membuat cheese
-	static int price;
+	static const string ingredients[2]; // komposisi dari kelas makanan ini
+	static int price; //harga dari XXNormalProduct setiap sajiannya
 public:
-	static int getPrice(); //Mengembalikan harga apabila satu cheese terjual
-	static string* getIngredients(); //mengembalikan komposisi dari cheese
+	static int getPrice(); //mengembalikan harga dari Cheese setiap sajiannya
+	static string getIngredients(int i); //Mengembalikan komposisi dari Cheese
 };
 
 #endif

@@ -10,7 +10,6 @@ private:
 	static int price; //harga dari daging ayam jika dijual
 public:
 	static int getPrice(); //mengembalikan harga dari telur ayam
-	~ChickenMeat();
 };
 
 #endif

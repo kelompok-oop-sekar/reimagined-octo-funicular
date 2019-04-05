@@ -9,7 +9,7 @@ class ChickenEgg : public FarmProduct{
 private:
 	static int price; //harga jual setiap satu chickenegg
 public:
-	static int GetPrice(); //mengembalikan jumlah harga yang didapat pada saat penjualan chickenegg
+	static int getPrice(); //mengembalikan jumlah harga yang didapat pada saat penjualan chickenegg
 	~ChickenEgg();
 };
 
