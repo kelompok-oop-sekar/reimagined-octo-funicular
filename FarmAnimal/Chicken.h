@@ -28,6 +28,7 @@ class Chicken : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
             1. Mati karena kelaparan : ketika isHungry return true dan tickDie = 0 (void die)
             2. Mati karena dipotong player (void killed)
             */
+        char render();
 };
 
 #endif

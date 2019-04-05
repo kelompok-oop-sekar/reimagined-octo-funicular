@@ -6,9 +6,7 @@
 
 # include "MilkProducingFarmAnimal.h"
 # include "MeatProducingFarmAnimal.h"
-# include "../Product/BuffaloMeat.h"
-# include "../Product/BuffaloMilk.h"
-# include "../Product/Product.h"
+# include "../Renderable.h"
 
 class Buffalo : public MilkProducingFarmAnimal, public MeatProducingFarmAnimal {
     private :
@@ -28,6 +26,7 @@ class Buffalo : public MilkProducingFarmAnimal, public MeatProducingFarmAnimal {
             1. Mati karena kelaparan : ketika isHungry return true dan tickDie = 0 (void die)
             2. Mati karena dipotong player (void killed)
             */
+        char render();
 };
 
 #endif

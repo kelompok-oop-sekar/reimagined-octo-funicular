@@ -2,25 +2,25 @@
 # include "Duck.h"
 using namespace std;
 
-Duck::Duck(int _x, int _y) : EggProducingFarmAnimal(_x,_y,false) , MeatProducingFarmAnimal(_x,_y,false)
+Duck::Duck(int _x, int _y) : EggProducingFarmAnimal(_x,_y,false) , MeatProducingFarmAnimal(_x,_y,false) , FarmAnimal(_x,_y)
 {
     tickDie = 5;
     tickHungry = 7;
 }
-// Product Duck::grabMeat()
-// {
-//     // ??
-// }
-// Product Duck::grabEgg()
-// {
-//     // ??
-// }
 void Duck::moveAnimal() // method pergerakan Duck
 {
-    // case : kanan
-    // case : kiri
-    // case : atas
-    // case : bawah
+    srand((unsigned)time(0));
+    int randomX;
+    int randomY;
+    int rangeX = (8-6+1);
+    int rangeY = (8-0+1);
+    
+    randomX = 0+int(rangeX*rand()/RAND_MAX + 1.0);
+    randomY = 0+int(rangeY*rand()/RAND_MAX + 1.0);
+
+    FarmAnimal::x = randomX;
+    FarmAnimal::y = randomY;
+
     if (tickHungry>0) {
         tickHungry--;
     }
@@ -39,4 +39,12 @@ void Duck::eat()
 void Duck::sounding() // menuliskan "Kwek.. Kwek.." ke layar ketika player melakukan Talk
 {
     cout << "Kwek.. Kwek.." << endl;
+}
+char Duck::render()
+{
+    if (isHungry()) {
+        return 'd';
+    } else {
+        return 'D';
+    }
 }

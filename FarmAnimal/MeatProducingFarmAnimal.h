@@ -7,7 +7,7 @@
 # include "FarmAnimal.h"
 # include "../Product/Product.h"
 
-class MeatProducingFarmAnimal : virtual public FarmAnimal{
+class MeatProducingFarmAnimal : public virtual FarmAnimal{
     protected :
         bool meat;
     public :

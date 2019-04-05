@@ -24,6 +24,7 @@ class Duck : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
         bool isHungry(); // true jika Duck dalam keadaan lapar
         void eat();
         void sounding(); // menuliskan "Kwek.. Kwek.." ke layar ketika player melakukan Talk
+        char render();
 };
 
 #endif
