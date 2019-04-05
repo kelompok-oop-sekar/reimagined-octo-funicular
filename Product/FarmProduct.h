@@ -3,9 +3,10 @@
 #ifndef FARMPRODUCT_H
 #define FARMPRODUCT_H
 
-#include <string>
+#include "Product.h"
+
 //Farm Product adalah base class dari produk produk yang bisa didapat pemain langsung dari hewan ternak
-class FarmProduct {
+class FarmProduct : public Product {
 private:
 	static int n; //Jumlah dari farm produk yang dimiliki pemain di inventori
 public:

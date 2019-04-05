@@ -1,5 +1,12 @@
 #include "Cheese.h"
 
+string Cheese::className = "Cheese";
+
+string Cheese::getClassName() {
+	return className;
+}
+
+
 const string Cheese::ingredients[2] = { "Milk", "Milk" };
 
 int Cheese::price = 0;
