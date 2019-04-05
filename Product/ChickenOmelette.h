@@ -1,18 +1,17 @@
-//Nama file : ChickenOmelette.h
+//Nama File : ChickenOmelette.h
 
 #ifndef CHICKENOMELETTE_H
 #define CHICKENOMELETTE_H
 
 #include "SideProduct.h"
-//ChickenOmelette adalah nama kelas dari objek obhek omelet ayam yang bisa dimiliki oleh player saat besrmain
-class ChickenOmelette : public SideProduct{
+//ChickenOmelette adalah nama kelas dari makanan yang terinspirasi dari menu ayam penyet XXNormal yang terdiri dari telur dan ayam
+class ChickenOmelette : public SideProduct {
 private:
-	static string ingredients[2] = { "ChickenEgg", "ChickenEgg" }; //komposisi dari ChickenOmelette saat pembuatan ChickenOmelette
-	static int price; //harga dari omelet ayam satuannya
+	static const string ingredients[2]; // komposisi dari kelas makanan ini
+	static int price; //harga dari XXNormalProduct setiap sajiannya
 public:
-	static int getPrice(); //mengembalikan harga dari chicken omelette setiap satuannya
-	static string* getIngredients(); //mengembalikan komposisi dari chickenomelette
-	~ChickenOmelette();
+	static int getPrice(); //mengembalikan harga dari ChickenOmelette setiap sajiannya
+	static string getIngredients(int i); //Mengembalikan komposisi dari ChickenOmelette
 };
 
 #endif

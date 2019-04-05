@@ -1,0 +1,13 @@
+#include "Cheese.h"
+
+string Cheese::ingredients[] = { "Milk", "Milk" };
+
+int Cheese::price = 0;
+
+int Cheese::getPrice() {
+	return price;
+}
+
+string Cheese::getIngredients(int i) {
+	return ingredients[i];
+}

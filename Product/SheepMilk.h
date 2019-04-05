@@ -10,7 +10,6 @@ private:
 	static int price;//Harga dari sheepmilk setiap satuannya
 public :
 	static int getPrice();//Mengembalikan harga dari sheepmilk setiap satuannya
-	¬SheepMilk;
 };
 
 #endif

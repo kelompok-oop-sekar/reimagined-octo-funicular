@@ -3,8 +3,11 @@
 #ifndef SIDEPRODUCT_H
 #define SIDEPRODUCT_H
 
-#include "Product.h"
 #include <string>
+#include "Product.h"
+
+using namespace std;
+
 //Side Product adalah base class dari produk produk yang bisa didapat pemain setelah melakukan mix antara 2 atau lebih farm product
 class SideProduct : public Product {
 private:
