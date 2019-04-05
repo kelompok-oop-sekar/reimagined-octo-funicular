@@ -40,8 +40,8 @@ bool Duck::isHungry() // true jika Duck dalam keadaan lapar
 }
 void Duck::eat()
 {
-    if (!EggProducingFarmAnimal::milk) {
-       EggProducingFarmAnimal::milk == true;
+    if (!EggProducingFarmAnimal::egg) {
+       EggProducingFarmAnimal::egg == true;
    }
 }
 void Duck::sounding() // menuliskan "Kwek.. Kwek.." ke layar ketika player melakukan Talk

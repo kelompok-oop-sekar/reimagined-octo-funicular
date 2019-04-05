@@ -42,8 +42,8 @@ bool Chicken::isHungry() // menghasilkan true jika Chicken dalam keadaan lapar
 }
 void Chicken::eat()
 {
-    if (!EggProducingFarmAnimal::milk) {
-       EggProducingFarmAnimal::milk == true;
+    if (!EggProducingFarmAnimal::egg) {
+       EggProducingFarmAnimal::egg == true;
    }
 }
 void Chicken::sounding() // menuliskan "Petok.. Petok.." ke layar ketika player melakukan Talk
