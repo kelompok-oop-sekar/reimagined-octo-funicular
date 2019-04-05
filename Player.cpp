@@ -8,7 +8,7 @@ Player::Player() {
     wateringCan = 5;
     money = 5000;
 	ChickenEgg a();
-	inventory.insert(pair<Product, int>(a, 0));
+	inventory.insert(make_pair(a, 0));
 	x = 0;
 	y = 0;
 }
@@ -18,7 +18,7 @@ Player::Player(int capacity, int coin, int x, int y) {
     wateringCan = capacity;
     money = coin;
 	ChickenEgg a();
-	inventory.insert(pair<Product, int>(a, 0));
+	inventory.insert(make_pair(a, 0));
 	this -> x = x;
 	this -> y = y;
 }
@@ -97,8 +97,17 @@ void Player::talk(FarmAnimal& animal) {
 //void interact(EggProducingFarmAnimal& animal) {
 
 //void interact(MilkProducingFarmAnimal& animal);
-//void interact(Well& well);
-//void interact(Truck& truck);
+void interact(Well& well){
+	watercan = 10;
+}
+
+void interact(Truck& truck){
+	int size = inventory.size();
+	while (size > 0){
+		
+		size--;
+	}
+}
 
 // Menyembelih hewan "MeatProducingFarmAnimal" untuk mendapatkan
 // "Product" daging.

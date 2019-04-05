@@ -54,7 +54,7 @@ public:
     //void interact(EggProducingFarmAnimal& animal) {
 	
     //void interact(MilkProducingFarmAnimal& animal);
-    //void interact(Well& well);
+    void interact(Well& well);
     //void interact(Truck& truck);
 
     // Menyembelih hewan "MeatProducingFarmAnimal" untuk mendapatkan
