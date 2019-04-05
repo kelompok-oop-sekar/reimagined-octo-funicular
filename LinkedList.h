@@ -16,8 +16,13 @@ public:
 	int find(string elmt) {
 		if (size > 0) {
 			for (int i = 0; i < size; i++) {
-				if (typeid(data[i]))
+				if (typeid(data[i]).name() == elmt) {
+					return i;
+				}
 			}
+		}
+		else {
+			return -1;
 		}
 	}
 	bool isEmpty();
