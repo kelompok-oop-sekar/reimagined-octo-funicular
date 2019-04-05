@@ -13,6 +13,7 @@ public:
 	LinkedList() {
 		size = 0;
 	}
+
 	int find(string elmt) {
 		if (size > 0) {
 			for (int i = 0; i < size; i++) {
@@ -25,10 +26,22 @@ public:
 			return -1;
 		}
 	}
-	bool isEmpty();
-	void add(T elmt);
-	void remove(T elmt);
-	T get(int i);
+
+	bool isEmpty() {
+		return size == 0;
+	}
+	void add(T elmt) {
+		data[size] = T;
+		size++;
+	}
+	void remove(int idx) {
+		for (int i = idx; i < size; i++) {
+			data[i] = data[i + 1];
+		}
+	}
+	T get(int i) {
+		return data[i];
+	}
 };
 
 #endif
