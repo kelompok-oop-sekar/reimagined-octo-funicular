@@ -1,11 +1,13 @@
+#include <iostream>
 #include <map>
 using namespace std;
 // Player merupakan kelas yang mendefinisikan 'command' yang bisa diperintahkan
 // saat menjalankan program.
+#include "Classes.h"
 class Player : public Renderable {
 private:
-	int x, y; // Wadah air untuk menanam rumput.
-    int wateringCan;
+	int x, y; 
+    int wateringCan;	// Wadah air untuk menanam rumput.
     
     // Uang.
     int money;

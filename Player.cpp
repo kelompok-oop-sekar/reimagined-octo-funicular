@@ -7,12 +7,20 @@ using namespace std;
 Player::Player() {
     wateringCan = 5;
     money = 5000;
+	ChickenEgg a();
+	inventory.insert(pair<Product, int>(a, 0));
+	x = 0;
+	y = 0;
 }
 
 // ctor dengan kapasitas wadah air.
-Player::Player(int capacity, int coin) {
+Player::Player(int capacity, int coin, int x, int y) {
     wateringCan = capacity;
     money = coin;
+	ChickenEgg a();
+	inventory.insert(pair<Product, int>(a, 0));
+	this -> x = x;
+	this -> y = y;
 }
 
 // Bergerak pada semua "Cell" yang bertipe "Land" selama tidak 
@@ -23,38 +31,38 @@ Player::Player(int capacity, int coin) {
 // 'd' = right
 void Player::move(char direction) {
 	if (direction == 'w') {
-		if (x == 0) {
-			cout << "Player has reached top boundary" << endl;
-		}
-		else {
-			x--;
-			cout << "Player moves up" << endl;
-		}
-	}
-	else if (direction == 'a') {
 		if (y == 0) {
-			cout << "Player has reached left boundary" << endl;
+			cout << "Player has reached top boundary" << endl;
 		}
 		else {
 			y--;
 			cout << "Player moves up" << endl;
 		}
 	}
+	else if (direction == 'a') {
+		if (x == 0) {
+			cout << "Player has reached left boundary" << endl;
+		}
+		else {
+			x--;
+			cout << "Player moves left" << endl;
+		}
+	}
 	else if (direction == 's') {
-		if (x == 9) {
+		if (y == 9) {
 			cout << "Player has reached bottom boundary" << endl;
 		}
 		else {
-			x++;
-			cout << "Player moves up" << endl;
+			y++;
+			cout << "Player moves down" << endl;
 		}
 	}
 	else if (direction == 'd') {
-		if (y == 9) {
+		if (x == 9) {
 			cout << "Player has reached right boundary" << endl;
 		}
 		else {
-			y++;
+			x++;
 			cout << "Player moves right" << endl;
 		}
 	}
@@ -104,6 +112,7 @@ void Player::kill(MeatProducingFarmAnimal& animal) {
 void Player::grow(Land& land) {
 	money--;
 	cout << "Player grows grass" << endl;
+	land.setGrass();
 }
 
 // Membuat "SideProduct" dengan "Mixer":
