@@ -14,7 +14,7 @@ public:
 		size = 0;
 	}
 
-	int find(string elmt) {
+	int find(std::string elmt) {
 		if (size > 0) {
 			for (int i = 0; i < size; i++) {
 				if (typeid(data[i]).name() == elmt) {
@@ -31,7 +31,7 @@ public:
 		return size == 0;
 	}
 	void add(T elmt) {
-		data[size] = T;
+		data[size] = elmt;
 		size++;
 	}
 	void remove(int idx) {
