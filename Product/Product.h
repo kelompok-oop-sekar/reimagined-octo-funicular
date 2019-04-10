@@ -11,8 +11,10 @@ class Product {
 private:
 	static int n; //Jumlah dari keseluruhan produk yang dimiliki pemain di inventori
 public:
-	virtual string callGetClassName();
-	static int getNAllProduct(); //Mengembalikan jumlah dari produk yang dimiliki pemain
+	virtual string GetClassName() {}
+	virtual int getNAllProduct() {} //Mengembalikan jumlah dari produk yang dimiliki pemain
+	virtual string getIngredients(int i) {}
+
 };
 
 #endif

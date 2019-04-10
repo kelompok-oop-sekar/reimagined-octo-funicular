@@ -10,8 +10,8 @@ private:
 	static string className;
 	static int price; //harga dari CowMilk setiap satuannya 
 public:
-	static string getClassName();
-	static int getPrice(); //mengembalikan harga dari CowMilk setiap satuannya
+	string getClassName();
+	int getPrice(); //mengembalikan harga dari CowMilk setiap satuannya
 };
 
 #endif

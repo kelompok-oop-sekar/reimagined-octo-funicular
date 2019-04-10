@@ -11,9 +11,9 @@ private:
 	static const string ingredients[2]; // komposisi dari kelas makanan ini
 	static int price; //harga dari XXNormalProduct setiap sajiannya
 public:
-	static string getClassName();
-	static int getPrice(); //mengembalikan harga dari XXNormalChicken setiap sajiannya
-	static string getIngredients(int i); //Mengembalikan komposisi dari XXNormalChicken
+	string getClassName();
+	int getPrice(); //mengembalikan harga dari XXNormalChicken setiap sajiannya
+	string getIngredients(int i); //Mengembalikan komposisi dari XXNormalChicken
 };
 
 #endif

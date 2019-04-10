@@ -10,8 +10,8 @@ private:
 	static string className;
 	static int price; //harga dari penjualan dagin sapi setiap satuannya
 public:
-	static string getClassName();
-	static int getPrice(); //mengembalikan harga dari dagin sapi saat penjualan
+	string getClassName();
+	int getPrice(); //mengembalikan harga dari dagin sapi saat penjualan
 };
 
 #endif
