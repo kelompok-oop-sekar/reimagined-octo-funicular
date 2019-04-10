@@ -83,12 +83,12 @@ void Player::move(char direction) {
 }
 
 // Berbicara dengan hewan.
-void Player::talk(LinkedList<FarmAnimal*> List, int direction) {
+void Player::talk(LinkedList<FarmAnimal*> List, char direction) {
 	/* direction :
-		1 -> atas
-		2 -> kanan
-		3 -> bawah
-		4 -> kiri
+		w -> atas
+		d -> kanan
+		s -> bawah
+		a -> kiri
 	*/
 
 	// cari animal yang posisinya di dekat player
@@ -98,19 +98,19 @@ void Player::talk(LinkedList<FarmAnimal*> List, int direction) {
 	int deltaY = 0;
 
 	switch (direction) {
-	case 1: {
+	case 'w': {
 		deltaY = -1;
 	}
 			break;
-	case 2: {
+	case 'd': {
 		deltaX = 1;
 	}
 			break;
-	case 3: {
+	case 's': {
 		deltaY = 1;
 	}
 			break;
-	case 4: {
+	case 'a': {
 		deltaX = -1;
 	}
 			break;
@@ -175,12 +175,12 @@ void Player::interact(Truck& truck) {
 
 // Menyembelih hewan "MeatProducingFarmAnimal" untuk mendapatkan
 // "Product" daging.
-void Player::kill(LinkedList<FarmAnimal*> List, int direction) {
+void Player::kill(LinkedList<FarmAnimal*> List, char direction) {
 	/* direction :
-		1 -> atas
-		2 -> kanan
-		3 -> bawah
-		4 -> kiri
+		w -> atas
+		d -> kanan
+		s -> bawah
+		a -> kiri
 	*/
 
 	// cari animal yang posisinya di dekat player
@@ -190,19 +190,19 @@ void Player::kill(LinkedList<FarmAnimal*> List, int direction) {
 	int deltaY = 0;
 
 	switch (direction) {
-	case 1: {
+	case 'w': {
 		deltaY = -1;
 	}
 			break;
-	case 2: {
+	case 'd': {
 		deltaX = 1;
 	}
 			break;
-	case 3: {
+	case 's': {
 		deltaY = 1;
 	}
 			break;
-	case 4: {
+	case 'a': {
 		deltaX = -1;
 	}
 			break;
