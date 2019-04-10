@@ -283,17 +283,28 @@ void Player::grow(Land& land) {
 	land.setGrass();
 }
 
-void Player::control() {
+void Player::control(LinkedList<FarmAnimal*> List) {
 	char input;
+	char dir;
 	cin >> input;
 	if (input == 'w' || input == 'a' || input == 's' || input == 'd') {
 		move(input);
 	}
-	else if (input == 'i') {
+	else if (input == 'b') {
 		seeInventory();
 	}
-	else {
-		cout << "Invalid input" << endl;
+	else if (input == 'k') {
+		cout << "direction : ";
+		cin >> dir;
+		kill(List, dir);
+	}
+	else if (input == 't') {
+		cout << "direction : ";
+		cin >> dir;
+		talk(List, dir);
+	}
+	else if (input == 'i') {
+
 	}
 }
 
