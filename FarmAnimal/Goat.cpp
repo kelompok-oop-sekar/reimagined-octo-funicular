@@ -95,7 +95,7 @@ void Goat::moveAnimal() // method pergerakan Sheep
     if (tickHungry==0) {
         tickDie--;
     }
-}void Sheep::moveAnimal() // method pergerakan Sheep
+}void Goat::moveAnimal() // method pergerakan Sheep
 {
     int randomVal = 1 + rand() % 4;
 
