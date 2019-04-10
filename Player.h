@@ -37,7 +37,7 @@ public:
 	void control();
 
     // Berbicara dengan hewan.
-    void talk(LinkedList<FarmAnimal*> List, int direction);
+    void talk(LinkedList<FarmAnimal*> List, char direction);
 
     // Interaksi Player:
     // 1. "FarmAnimal":
@@ -65,7 +65,7 @@ public:
 
     // Menyembelih hewan "MeatProducingFarmAnimal" untuk mendapatkan
     // "Product" daging.
-    void kill(LinkedList<FarmAnimal*> List, int direction);
+    void kill(LinkedList<FarmAnimal*> List, char direction);
 
     // Menyiram "Land" dengan wadah air yang dimiliki dan 
     // menumbuhkan rumput di petak "Land" tempat "Player" berdiri.
