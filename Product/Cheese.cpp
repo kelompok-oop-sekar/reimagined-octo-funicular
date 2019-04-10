@@ -7,7 +7,7 @@ string Cheese::getClassName() {
 }
 
 
-const string Cheese::ingredients[2] = { "Milk", "Milk" };
+const string Cheese::ingredients[2] = { "CowMilk", "CowMilk" };
 
 int Cheese::price = 0;
 
