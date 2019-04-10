@@ -21,11 +21,7 @@ class Duck : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
             _y merepresentasikan koordinat sumbu y
             */
         Duck(int _x, int _y);
-        static string getClassName();
-        string callGetClassName() {
-            string a = getClassName();
-            return a;
-        }
+        string getClassName();
         void moveAnimal(); // method pergerakan Duck
         bool isHungry(); // true jika Duck dalam keadaan lapar
         void eat();

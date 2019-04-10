@@ -232,7 +232,7 @@ void Player::kill(LinkedList<FarmAnimal*> List, int direction) {
 	if (found) {
 		cout << "Player gained meat" << endl;
 		string animalClassName;
-		animalClassName = List.get(i)->callGetClassName();
+		animalClassName = List.get(i)->getClassName();
 		// mendeteksi kelas riil animal
 		if (strcmp(animalClassName, "Buffalo") == 0) {
 			BuffaloMeat* result = new BuffaloMeat();
@@ -311,7 +311,7 @@ void Player::seeInventory() {
 	}
 	else {
 		for (int i = 0; i < inventory.getSize(); i++) {
-			cout << inventory.get(i)->callGetClassName() << endl;
+			cout << inventory.get(i)->getClassName() << endl;
 		}
 	}
 }

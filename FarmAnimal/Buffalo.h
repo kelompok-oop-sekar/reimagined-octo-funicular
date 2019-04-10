@@ -20,11 +20,7 @@ class Buffalo : public MilkProducingFarmAnimal, public MeatProducingFarmAnimal {
             _y merepresentasikan koordinat sumbu y
             */
         Buffalo(int _x, int _y);
-        static string getClassName();
-        string callGetClassName() {
-            string a = getClassName();
-            return a;
-        }
+        string getClassName();
         void moveAnimal(); // method pergerakan Buffalo
         bool isHungry();// menghasilkan true jika Buffalo dalam keadaan lapar
         void eat();
