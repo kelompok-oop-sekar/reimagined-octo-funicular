@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
-#include <conio.h>
+#include <cstring>
 
 using namespace std;
 
@@ -234,21 +234,34 @@ void Player::kill(LinkedList<FarmAnimal*> List, int direction) {
 		string animalClassName;
 		animalClassName = List.get(i)->getClassName();
 		// mendeteksi kelas riil animal
-		if (strcmp(animalClassName, "Buffalo") == 0) {
+		if (animalClassName.compare("Buffalo") == 0) {
 			BuffaloMeat* result = new BuffaloMeat();
-		} else if (strcmp(animalClassName, "Chicken") == 0) {
+		} else if (animalClassName.compare("Chicken") == 0) {
 			ChickenMeat* result = new ChickenMeat();
-		} else if (strcmp(animalClassName, "Cow") == 0) {
+
+			// menambahkan result ke inventory player
+			this->inventory.add(result);
+		} else if (animalClassName.compare("Cow") == 0) {
 			CowMeat* result = new CowMeat();
-		} else if (strcmp(animalClassName, "Duck") == 0) {
-			// DuckMeat* result = new DuckMeat();
-		} else if (strcmp(animalClassName, "Goat") == 0) {
+
+			// menambahkan result ke inventory player
+			this->inventory.add(result);
+		} else if (animalClassName.compare("Duck") == 0) {
+			DuckMeat* result = new DuckMeat();
+
+			// menambahkan result ke inventory player
+			this->inventory.add(result);
+		} else if (animalClassName.compare("Goat") == 0) {
 			GoatMeat* result = new GoatMeat();
-		} else if (strcmp(animalClassName, "Sheep") == 0) {
+
+			// menambahkan result ke inventory player
+			this->inventory.add(result);
+		} else if (animalClassName.compare("Sheep") == 0) {
 			SheepMeat* result = new SheepMeat();
+
+			// menambahkan result ke inventory player
+			this->inventory.add(result);
 		}
-		// menambahkan result ke inventory player
-		this->inventory.add(result);
 		// menghapus animal dari List animal
 		delete List.get(i);
 		List.remove(i);
@@ -311,7 +324,7 @@ void Player::seeInventory() {
 	}
 	else {
 		for (int i = 0; i < inventory.getSize(); i++) {
-			cout << inventory.get(i)->getClassName() << endl;
+			cout << inventory.get(i)->GetClassName() << endl;
 		}
 	}
 }
