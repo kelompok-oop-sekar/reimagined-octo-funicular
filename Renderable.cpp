@@ -4,7 +4,8 @@
 char Renderable::Map[8][8];
 
 void Renderable::display() {
-	std::cout << "-----------------" << std::endl;
+
+	std::cout << "+---+---+---+---+---+---+---+---+" << std::endl;
 	for (int j = 0; j < 8; j++) {
 	std::cout << "| ";
 		for (int i = 0; i < 8; i++) {
@@ -14,8 +15,8 @@ void Renderable::display() {
 			}
 		}
 		std::cout << " |" << std::endl;
+		std::cout << "+---+---+---+---+---+---+---+---+" << std::endl;
 	}
-	std::cout << "-----------------" << std::endl;
 }
 
 char Renderable::getMap(int i, int j) {
