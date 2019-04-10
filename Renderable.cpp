@@ -27,7 +27,7 @@ void Renderable::setMap(int i, int j, char r) {
 }
 
 bool Renderable::isObjectExist(int i, int j) {
-	if (Map[i][j] != '#' || Map[i][j] != '-' || Map[i][j] != '*' || Map[i][j] != '@' || Map[i][j] != 'o' || Map[i][j] != 'x') {
+	if (Map[i][j] != '#' && Map[i][j] != '-' && Map[i][j] != '*' && Map[i][j] != '@' && Map[i][j] != 'o' && Map[i][j] != 'x') {
 		return true;
 	}
 	else {

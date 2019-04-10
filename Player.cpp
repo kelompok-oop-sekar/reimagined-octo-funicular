@@ -35,8 +35,10 @@ void Player::move(char direction) {
 			cout << "Player has reached top boundary" << endl;
 		}
 		else {
-			y--;
-			cout << "Player moves up" << endl;
+			if (!isObjectExist(x, y - 1)) {
+				y--;
+				cout << "Player moves up" << endl;
+			}
 		}
 	}
 	else if (direction == 'a') {
@@ -44,8 +46,10 @@ void Player::move(char direction) {
 			cout << "Player has reached left boundary" << endl;
 		}
 		else {
-			x--;
-			cout << "Player moves left" << endl;
+			if (!isObjectExist(x - 1, y)) {
+				x--;
+				cout << "Player moves left" << endl;
+			}
 		}
 	}
 	else if (direction == 's') {
@@ -53,8 +57,10 @@ void Player::move(char direction) {
 			cout << "Player has reached bottom boundary" << endl;
 		}
 		else {
-			y++;
-			cout << "Player moves down" << endl;
+			if (!isObjectExist(x, y + 1)) {
+				y++;
+				cout << "Player moves down" << endl;
+			}
 		}
 	}
 	else if (direction == 'd') {
@@ -62,8 +68,10 @@ void Player::move(char direction) {
 			cout << "Player has reached right boundary" << endl;
 		}
 		else {
-			x++;
-			cout << "Player moves right" << endl;
+			if (!isObjectExist(x + 1, y)) {
+				x++;
+				cout << "Player moves right" << endl;
+			}
 		}
 	}
 	else {

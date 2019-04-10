@@ -12,7 +12,7 @@ public:
 	static void display();
 	static void setMap(int i, int j, char c);
 	static char getMap(int i, int j);
-	static char isObjectExist(int i, int j);
+	static bool isObjectExist(int i, int j);
 	virtual char render() = 0; //method untuk mengembalikan karakter sesuai dari perilaku instantiasi renderable objects
 };
 
