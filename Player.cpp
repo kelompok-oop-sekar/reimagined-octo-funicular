@@ -132,7 +132,7 @@ void Player::control() {
 		move(input);
 	}
 	else if (input == 'i') {
-		//do something here
+		seeInventory();
 	}
 	else {
 		cout << "Invalid input" << endl;
