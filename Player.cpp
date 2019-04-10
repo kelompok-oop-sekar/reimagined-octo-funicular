@@ -351,7 +351,7 @@ void Player::control(LinkedList<FarmAnimal*>* List, LinkedList<Cell*> List2) {
 		interact(dir);
 	}
 	else if (input == 'g') {
-		List.get(y * 8 + x)->setGrass(true);
+		List2.get(y * 8 + x)->setGrass(true);
 		wateringCan--;
 	}
 	else {
