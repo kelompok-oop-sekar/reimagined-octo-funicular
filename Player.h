@@ -73,7 +73,7 @@ public:
     // Membuat "SideProduct" dengan "Mixer":
     // 	Mengombinasikan bahan-bahan dari tas (minimal 2 bahan
     // 	[boleh sama]; cara implementasi bebas) 
-    void mix(FarmProduct& o1, FarmProduct& o2);
+    SideProduct mix(FarmProduct* o1, FarmProduct* o2);
 
     // Melakukan render.
     char render();

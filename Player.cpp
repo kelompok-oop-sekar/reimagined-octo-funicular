@@ -362,8 +362,19 @@ void Player::control(LinkedList<FarmAnimal*>* List, LinkedList<Cell*> List2) {
 // Membuat "SideProduct" dengan "Mixer":
 // 	Mengombinasikan bahan-bahan dari tas (minimal 2 bahan
 // 	[boleh sama]; cara implementasi bebas) 
-void Player::mix(FarmProduct& o1, FarmProduct& o2) {
-
+SideProduct Player::mix(FarmProduct* o1, FarmProduct* o2) {
+	if ((o1->getClassName() == "ChickenMeat" && o2->getClassName() == "ChickenEgg") || (o2->getClassName() == "ChickenMeat" && o1->getClassName() == "ChickenEgg")) {
+		XXNormalChicken side;
+		return side;
+	}
+	else if (o1->getClassName() == "CowMilk" && o2->getClassName() == "CowMilk") {
+		Cheese side;
+		return side;
+	}
+	else if (o1->getClassName() == "ChickenEgg" && o2->getClassName() == "ChickenEgg") {
+		ChickenOmelette side;
+		return side;
+	}
 }
 
 // Melakukan render.
@@ -393,7 +404,7 @@ void Player::seeInventory() {
 	}
 	else {
 		for (int i = 0; i < inventory.getSize(); i++) {
-			cout << inventory.get(i)->getClassName() << endl;
+			cout << i << ". " << inventory.get(i)->getClassName() << endl;
 		}
 	}
 }
