@@ -15,7 +15,7 @@ void Renderable::display() {
 		}
 		std::cout << " |" << std::endl;
 	}
-	std::cout << "-----------------" << endl;
+	std::cout << "-----------------" << std::endl;
 }
 
 char Renderable::getMap(int i, int j) {
