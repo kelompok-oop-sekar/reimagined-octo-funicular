@@ -6,7 +6,7 @@ string ChickenOmelette::getClassName() {
 	return className;
 }
 
-const string ChickenOmelette::ingredients[] = { "Milk", "Milk" };
+const string ChickenOmelette::ingredients[] = { "ChickenEgg", "ChickenEgg" };
 
 int ChickenOmelette::price = 0;
 

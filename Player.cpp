@@ -375,6 +375,10 @@ SideProduct Player::mix(FarmProduct* o1, FarmProduct* o2) {
 		ChickenOmelette side;
 		return side;
 	}
+	else {
+		Junk side;
+		return side;
+	}
 }
 
 // Melakukan render.

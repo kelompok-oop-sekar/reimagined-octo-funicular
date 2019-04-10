@@ -3,6 +3,7 @@
 #include "Classes.h"
 
 int main() {
+	system("CLS");
 	/*
 	std::cout << "Press Enter button to continue";
 	std::cin.get();
@@ -70,6 +71,7 @@ int main() {
 		for (int i = 0; i < listofanimal.getSize(); i++) {
 			Renderable::setMap(listofanimal.get(i)->getX(), listofanimal.get(i)->getY(), listofanimal.get(i)->render());
 		}
+		system("CLS");
 		Renderable::display();
 		player.control(&listofanimal,listofcell);
 		player.printCan();

@@ -16,6 +16,7 @@
 #include "Product/BuffaloMeat.h"
 #include "Product/BuffaloMilk.h"
 #include "Product/Cheese.h"
+#include "Product/Junk.h"
 #include "Product/ChickenEgg.h"
 #include "Product/ChickenMeat.h"
 #include "Product/ChickenOmelette.h"
