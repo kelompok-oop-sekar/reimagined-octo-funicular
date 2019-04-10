@@ -34,7 +34,7 @@ public:
     // 'd' = right
     void move(char direction);
 
-	void control(LinkedList<FarmAnimal*> List);
+	void control(LinkedList<FarmAnimal*>* List);
 
     // Berbicara dengan hewan.
     void talk(LinkedList<FarmAnimal*> List, char direction);
@@ -60,8 +60,7 @@ public:
     //void interact(EggProducingFarmAnimal& animal) {
 	
     //void interact(MilkProducingFarmAnimal& animal);
-    void interact(Well& well);
-    void interact(Truck& truck);
+    void interact(char dir);
 
     // Menyembelih hewan "MeatProducingFarmAnimal" untuk mendapatkan
     // "Product" daging.

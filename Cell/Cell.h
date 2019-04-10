@@ -22,6 +22,8 @@ class Cell : public Renderable{
 		// Mengeset posisi x dari cell
 		void setY(int y);
 		// Mengeset posisi y dari cell
+
+		virtual void setGrass(bool Exist) {}
 };
 
 #endif

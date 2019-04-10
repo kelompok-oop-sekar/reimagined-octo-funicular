@@ -19,25 +19,25 @@ void Duck::moveAnimal() // method pergerakan Sheep
 
 	switch (randomVal) {
 	case 1: {
-		if ((FarmAnimal::x + 1) >= 6 && (FarmAnimal::x + 1 <= 8) && !isObjectExist(x + 1, y)) {
+		if ((FarmAnimal::x + 1) >= 0 && (FarmAnimal::x + 1 <= 7) && !isObjectExist(x + 1, y)) {
 			FarmAnimal::x++;
 		}
 	}
 			break;
 	case 2: {
-		if ((FarmAnimal::x - 1) >= 6 && (FarmAnimal::x - 1 <= 8) && !isObjectExist(x - 1, y)) {
+		if ((FarmAnimal::x - 1) >= 0 && (FarmAnimal::x - 1 <= 7) && !isObjectExist(x - 1, y)) {
 			FarmAnimal::x--;
 		}
 	}
 			break;
 	case 3: {
-		if ((FarmAnimal::y + 1) >= 6 && (FarmAnimal::y + 1 <= 8) && !isObjectExist(x, y + 1)) {
+		if ((FarmAnimal::y + 1) >= 6 && (FarmAnimal::y + 1 <= 7) && !isObjectExist(x, y + 1)) {
 			FarmAnimal::y++;
 		}
 	}
 			break;
 	case 4: {
-		if ((FarmAnimal::y - 1) >= 6 && (FarmAnimal::y - 1 <= 8) && !isObjectExist(x, y - 1)) {
+		if ((FarmAnimal::y - 1) >= 6 && (FarmAnimal::y - 1 <= 7) && !isObjectExist(x, y - 1)) {
 			FarmAnimal::y--;
 		}
 	}
@@ -58,11 +58,16 @@ bool Duck::isHungry() // true jika Duck dalam keadaan lapar
 {
     return (tickHungry == 0);
 }
-void Duck::eat()
+void Duck::eat(LinkedList<Cell*> List)
 {
-    if (!EggProducingFarmAnimal::egg) {
-       EggProducingFarmAnimal::egg == true;
-   }
+	if (tickDie < 5) {
+		FarmAnimal::eat(List);
+		if (!EggProducingFarmAnimal::egg && (Map[x][y] == '@' || Map[x][y] == '#' || Map[x][y] == '*')) {
+			EggProducingFarmAnimal::egg == true;
+			tickDie = 5;
+			tickHungry = 7;
+		}
+	}
 }
 void Duck::sounding() // menuliskan "Kwek.. Kwek.." ke layar ketika player melakukan Talk
 {

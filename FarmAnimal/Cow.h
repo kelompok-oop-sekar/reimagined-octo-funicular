@@ -25,7 +25,7 @@ class Cow : public MeatProducingFarmAnimal, public MilkProducingFarmAnimal {
         Cow(int _x, int _y);
         void moveAnimal(); // method pergerakan Cow
         bool isHungry(); // menghasilkan true jika Cow dalam keadaan lapar
-        void eat();
+        void eat(LinkedList<Cell*> List);
         void sounding(); // menuliskan "Mooo.. Mooo.." ke layar ketika player melakukan Talk
         /* Mekanisme ayam mati :
             1. Mati karena kelaparan : ketika isHungry return true dan tickDie = 0 (void die)

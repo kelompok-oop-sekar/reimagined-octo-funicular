@@ -17,8 +17,7 @@ class Land : public Cell {
 		
 		virtual char render() = 0; //Pure Virtual dari render
 		bool isWithGrass(); //Apakah Land (beserta turunannya) memiliki rumput atau tidak 
-		void setGrass(); //set land (beserta turunannya) agar memiliki rumput
-		void removeGrass(); //Untuk menghapus grass
+		void setGrass(bool Exist); //set land (beserta turunannya) agar memiliki rumput
 };
 
 #endif

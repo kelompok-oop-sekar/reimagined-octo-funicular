@@ -12,12 +12,7 @@ bool Land :: isWithGrass() //Apakah Land (beserta turunannya) memiliki rumput at
 	return grass;
 }
 
-void Land :: setGrass() //set land (beserta turunannya) berumput
+void Land :: setGrass(bool Exist) //set land (beserta turunannya) berumput
 {
-	this-> grass = true;
-}
-
-void Land :: removeGrass()//Untuk menghapus grass
-{
-	this-> grass = false;
+	this-> grass = Exist;
 }

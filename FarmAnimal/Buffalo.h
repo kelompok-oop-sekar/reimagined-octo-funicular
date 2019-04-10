@@ -23,7 +23,7 @@ class Buffalo : public MilkProducingFarmAnimal, public MeatProducingFarmAnimal {
         string getClassName();
         void moveAnimal(); // method pergerakan Buffalo
         bool isHungry();// menghasilkan true jika Buffalo dalam keadaan lapar
-        void eat();
+        void eat(LinkedList<Cell*> List);
         void sounding(); // menuliskan "MOOOO.." ke layar ketika player melakukan Talk
         /* Mekanisme ayam mati :
             1. Mati karena kelaparan : ketika isHungry return true dan tickDie = 0 (void die)

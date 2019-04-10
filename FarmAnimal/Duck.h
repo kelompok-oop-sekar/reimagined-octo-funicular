@@ -24,7 +24,7 @@ class Duck : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
         string getClassName();
         void moveAnimal(); // method pergerakan Duck
         bool isHungry(); // true jika Duck dalam keadaan lapar
-        void eat();
+        void eat(LinkedList<Cell*> List);
         void sounding(); // menuliskan "Kwek.. Kwek.." ke layar ketika player melakukan Talk
         char render();
 };

@@ -6,6 +6,9 @@
 
 # include <string>
 # include "../Renderable.h"
+#include "../LinkedList.h"
+#include "../Cell/Cell.h"
+
 using namespace std;
 
 
@@ -31,7 +34,7 @@ class FarmAnimal : public Renderable {
       // prosedur untuk menampilkan suara hewan
       virtual void sounding()=0;
       // prosedur memakan rumput jika land yang dipijak berumput
-      virtual void eat()=0;
+      virtual void eat(LinkedList<Cell*> List);
 	  virtual string getClassName() { return ""; }
 };
 

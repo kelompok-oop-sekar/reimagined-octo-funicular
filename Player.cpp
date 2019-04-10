@@ -166,11 +166,53 @@ void Player::talk(LinkedList<FarmAnimal*> List, char direction) {
 //void interact(EggProducingFarmAnimal& animal) {
 
 //void interact(MilkProducingFarmAnimal& animal);
-void Player::interact(Well& well) {
-	wateringCan = 10;
-}
 
-void Player::interact(Truck& truck) {
+void Player::interact(char dir) {
+	int deltaX = 0;
+	int deltaY = 0;
+
+	switch (dir) {
+	case 'w': {
+		deltaY = -1;
+	}
+			  break;
+	case 'd': {
+		deltaX = 1;
+	}
+			  break;
+	case 's': {
+		deltaY = 1;
+	}
+			  break;
+	case 'a': {
+		deltaX = -1;
+	}
+			  break;
+	default: {
+		// do nothing
+	}
+	}
+	if (Map[x + deltaX][y + deltaY] == 'T') {
+		if (!inventory.isEmpty()) {
+			int size = inventory.getSize();
+			Product* prod;
+			string namaBarang;
+			int totalJual = 0;
+			for (int i = 0; i < size; i++) {
+				prod = inventory.get(i);
+				// namaBarang = prod->callGetClassName();
+				// namaBarang barang;
+				totalJual += prod->getPrice();
+				inventory.remove(i);
+			}
+			money += totalJual;
+			cout << "Semua isi inventory berhasil dijual" << endl;
+			cout << "Hasil Penjualan : " << totalJual << endl;
+		}
+	}
+	else if (Map[x + deltaX][y + deltaY] == 'W') {
+		wateringCan = 10;
+	}
 }
 
 // Menyembelih hewan "MeatProducingFarmAnimal" untuk mendapatkan
@@ -280,10 +322,10 @@ void Player::kill(LinkedList<FarmAnimal*> List, char direction) {
 void Player::grow(Land& land) {
 	money--;
 	cout << "Player grows grass" << endl;
-	land.setGrass();
+	land.setGrass(true);
 }
 
-void Player::control(LinkedList<FarmAnimal*> List) {
+void Player::control(LinkedList<FarmAnimal*>* List) {
 	char input;
 	char dir;
 	cin >> input;
@@ -296,15 +338,17 @@ void Player::control(LinkedList<FarmAnimal*> List) {
 	else if (input == 'k') {
 		cout << "direction : ";
 		cin >> dir;
-		kill(List, dir);
+		kill(*List, dir);
 	}
 	else if (input == 't') {
 		cout << "direction : ";
 		cin >> dir;
-		talk(List, dir);
+		talk(*List, dir);
 	}
 	else if (input == 'i') {
-
+		cout << "direction : ";
+		cin >> dir;
+		interact(dir);
 	}
 }
 

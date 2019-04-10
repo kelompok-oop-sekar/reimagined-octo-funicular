@@ -20,25 +20,25 @@ void Sheep::moveAnimal() // method pergerakan Sheep
 
     switch (randomVal) {
         case 1 : {
-            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=7) && !isObjectExist(x+1,y)) {
                 FarmAnimal::x++;
             }
         }
         break;
         case 2 : {
-            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=7) && !isObjectExist(x - 1, y)) {
                 FarmAnimal::x--;
             }
         }
         break;
         case 3 : {
-            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=5) && !isObjectExist(x, y + 1)) {
                 FarmAnimal::y++;
             }
         }
         break;
         case 4 : {
-            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=5) && !isObjectExist(x, y - 1)) {
                 FarmAnimal::y--;
             }
         }
@@ -59,11 +59,16 @@ bool Sheep::isHungry() // true jika Sheep dalam keadaan lapar
 {
     return tickHungry==0;
 }
-void Sheep::eat()
+void Sheep::eat(LinkedList<Cell*> List)
 {
-    if (!MilkProducingFarmAnimal::milk) {
-       MilkProducingFarmAnimal::milk == true;
-   }
+	if (tickDie < 5) {
+		FarmAnimal::eat(List);
+		if (!MilkProducingFarmAnimal::milk && (Map[x][y] == '@' || Map[x][y] == '#' || Map[x][y] == '*')) {
+			MilkProducingFarmAnimal::milk == true;
+		}
+		tickDie = 5;
+		tickHungry = 8;
+	}
 }
 void Sheep::sounding() // menuliskan "Mbeek.. Mbeek.." ke layar ketika player melakukan Talk
 {

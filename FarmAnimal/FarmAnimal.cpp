@@ -19,3 +19,9 @@ int FarmAnimal::getY()
 {
     return y;
 }
+
+void FarmAnimal::eat(LinkedList<Cell*> List) {
+	if (Map[x][y] == '@' || Map[x][y] == '#' || Map[x][y] == '*') {
+		List.get(y * 8 + x)->setGrass(false);
+	}
+}

@@ -22,7 +22,7 @@ int main() {
 		/* untuk semua hewan di dalam linked list, move. dan tambah tick*/
 	
 	LinkedList<FarmAnimal*> listofanimal;
-	FarmAnimal* a = new Cow(6,6);
+	FarmAnimal* a = new Chicken(6,6);
 	listofanimal.add(a);
 	a = new Goat(3,3);
 	listofanimal.add(a);
@@ -30,7 +30,7 @@ int main() {
 	listofanimal.add(a);
 	
 	// inisialisasi kondisi awal sampai -HERE
-	Cell* halaman[64];
+	LinkedList<Cell*> listofcell;
 
 	for (int i = 0; i < 64; i++) {
 		Cell* l;
@@ -53,7 +53,7 @@ int main() {
 		else if (i % 8 == 5 && i / 8 == 0) {
 			l = new Mixer(i % 8, i / 8);
 		}
-		halaman[i] = l;
+		listofcell.add(l);
 	}
 
 	Player player;
@@ -62,7 +62,7 @@ int main() {
 
 	while (true) {
 		for (int i = 0; i < 64; i++) {
-			Renderable::setMap(halaman[i]->getX(), halaman[i]->getY(), halaman[i]->render());
+			Renderable::setMap(listofcell.get(i)->getX(), listofcell.get(i)->getY(), listofcell.get(i)->render());
 		}
 
 		Renderable::setMap(player.getX(), player.getY(), player.render());
@@ -71,11 +71,12 @@ int main() {
 			Renderable::setMap(listofanimal.get(i)->getX(), listofanimal.get(i)->getY(), listofanimal.get(i)->render());
 		}
 		Renderable::display();
-		player.control(listofanimal);
+		player.control(&listofanimal);
 		player.printCan();
 		player.printMoney();
 		for (int i = 0; i < 3; i++) {
 			listofanimal.get(i)->moveAnimal();
+			listofanimal.get(i)->eat(listofcell);
 		}
 	}
 	return 0;
