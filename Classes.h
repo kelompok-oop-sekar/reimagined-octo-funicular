@@ -7,7 +7,7 @@
 #include "Cell/Mixer.h"
 #include "Cell/Truck.h"
 #include "Cell/Well.h"
-/* #include "FarmAnimal/Buffalo.h"
+#include "FarmAnimal/Buffalo.h"
 #include "FarmAnimal/Chicken.h"
 #include "FarmAnimal/Cow.h"
 #include "FarmAnimal/Duck.h"
@@ -24,8 +24,8 @@
 #include "Product/DuckEgg.h"
 #include "Product/SheepMilk.h"
 #include "Product/XXNormalChicken.h"
-#include "Player.h" */
 #include "LinkedList.h"
+#include "Player.h"
 #include "Renderable.h"
 
-#endif // ! CLASSES_H
+#endif

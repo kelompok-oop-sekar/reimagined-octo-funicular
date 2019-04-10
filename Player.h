@@ -1,9 +1,14 @@
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include <iostream>
 #include <map>
 using namespace std;
 // Player merupakan kelas yang mendefinisikan 'command' yang bisa diperintahkan
 // saat menjalankan program.
+
 #include "Classes.h"
+
 class Player : public Renderable {
 private:
 	int x, y; 
@@ -13,7 +18,7 @@ private:
     int money;
 
     // Menyimpan barang hasil interaksi dengan ternak.
-    map<Product, int> inventory;
+	LinkedList<Product*> inventory;
 	
 public:
     // ctor dengan kapasitas wadah air default.
@@ -30,8 +35,10 @@ public:
     // 'd' = right
     void move(char direction);
 
+	void control();
+
     // Berbicara dengan hewan.
-    void talk(FarmAnimal& animal) ;
+    void talk(FarmAnimal& animal);
 
     // Interaksi Player:
     // 1. "FarmAnimal":
@@ -55,7 +62,7 @@ public:
 	
     //void interact(MilkProducingFarmAnimal& animal);
     void interact(Well& well);
-    //void interact(Truck& truck);
+    void interact(Truck& truck);
 
     // Menyembelih hewan "MeatProducingFarmAnimal" untuk mendapatkan
     // "Product" daging.
@@ -63,14 +70,22 @@ public:
 
     // Menyiram "Land" dengan wadah air yang dimiliki dan 
     // menumbuhkan rumput di petak "Land" tempat "Player" berdiri.
-    void grow(Land& land) ;
+    void grow(Land& land);
 
     // Membuat "SideProduct" dengan "Mixer":
     // 	Mengombinasikan bahan-bahan dari tas (minimal 2 bahan
     // 	[boleh sama]; cara implementasi bebas) 
-    void mix(FarmProduct& o1, FarmProduct& o2) ;
+    void mix(FarmProduct& o1, FarmProduct& o2);
 
     // Melakukan render.
-    char render() ;
+    char render();
+
+	int getX();
+
+	int getY();
+
+	void printCan();
+	void printMoney();
 };
 
+#endif

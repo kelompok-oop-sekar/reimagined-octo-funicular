@@ -7,20 +7,20 @@ using namespace std;
 Player::Player() {
     wateringCan = 5;
     money = 5000;
-	ChickenEgg a();
-	inventory.insert(make_pair(a, 0));
-	x = 0;
-	y = 0;
+	Product* a = new ChickenEgg();
+	inventory.add(a);
+	x = 4;
+	y = 4;
 }
 
 // ctor dengan kapasitas wadah air.
-Player::Player(int capacity, int coin, int x, int y) {
+Player::Player(int capacity, int coin) {
     wateringCan = capacity;
     money = coin;
-	ChickenEgg a();
-	inventory.insert(make_pair(a, 0));
-	this -> x = x;
-	this -> y = y;
+	Product* a = new ChickenEgg();
+	inventory.add(a);
+	x = 4;
+	y = 4;
 }
 
 // Bergerak pada semua "Cell" yang bertipe "Land" selama tidak 
@@ -49,7 +49,7 @@ void Player::move(char direction) {
 		}
 	}
 	else if (direction == 's') {
-		if (y == 9) {
+		if (y == 8) {
 			cout << "Player has reached bottom boundary" << endl;
 		}
 		else {
@@ -58,7 +58,7 @@ void Player::move(char direction) {
 		}
 	}
 	else if (direction == 'd') {
-		if (x == 9) {
+		if (x == 8) {
 			cout << "Player has reached right boundary" << endl;
 		}
 		else {
@@ -97,22 +97,16 @@ void Player::talk(FarmAnimal& animal) {
 //void interact(EggProducingFarmAnimal& animal) {
 
 //void interact(MilkProducingFarmAnimal& animal);
-void interact(Well& well){
-	watercan = 10;
+void Player::interact(Well& well){
+	wateringCan = 10;
 }
 
-void interact(Truck& truck){
-	int size = inventory.size();
-	while (size > 0){
-		
-		size--;
-	}
+void Player::interact(Truck& truck){
 }
 
 // Menyembelih hewan "MeatProducingFarmAnimal" untuk mendapatkan
 // "Product" daging.
 void Player::kill(MeatProducingFarmAnimal& animal) {
-	animal.~MeatProducingFarmAnimal();
 	cout << "Player gained meat" << endl;
 }
 
@@ -122,6 +116,20 @@ void Player::grow(Land& land) {
 	money--;
 	cout << "Player grows grass" << endl;
 	land.setGrass();
+}
+
+void Player::control() {
+	char input;
+	cin >> input;
+	if (input == 'w' || input == 'a' || input == 's' || input == 'd') {
+		move(input);
+	}
+	else if (input == 'i') {
+		//do something here
+	}
+	else {
+		cout << "Invalid input" << endl;
+	}
 }
 
 // Membuat "SideProduct" dengan "Mixer":
@@ -136,3 +144,18 @@ char Player::render() {
     return 'P';
 }
 
+int Player::getX() {
+	return x;
+}
+
+int Player::getY() {
+	return y;
+}
+
+void Player::printCan() {
+	cout << "Watering Can : " << wateringCan << endl;
+}
+
+void Player::printMoney() {
+	cout << "Money : " << money << endl;
+}

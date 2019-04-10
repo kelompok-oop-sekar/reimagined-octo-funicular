@@ -18,18 +18,37 @@ string Cow::getClassName() {
 
 void Cow::moveAnimal() // method pergerakan Cow
 {
-    srand((unsigned)time(0));
-    int randomX;
-    int randomY;
-    int rangeX = (6-0+1);
-    int rangeY = (8-0+1);
-    
-    randomX = 0+int(rangeX*rand()/RAND_MAX + 1.0);
-    randomY = 0+int(rangeY*rand()/RAND_MAX + 1.0);
+    int randomVal = 1 + rand() % 4;
 
-    FarmAnimal::x = randomX;
-    FarmAnimal::y = randomY;
-
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
     if (tickHungry>0) {
         tickHungry--;
     }

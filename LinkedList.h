@@ -42,6 +42,10 @@ public:
 	T get(int i) {
 		return data[i];
 	}
+
+	int getSize() {
+		return size;
+	}
 };
 
 #endif
