@@ -20,11 +20,7 @@ class Goat : public MeatProducingFarmAnimal, public MilkProducingFarmAnimal {
             _y merepresentasikan koordinat sumbu y
             */
         Goat(int _x, int _y);
-        static string getClassName();
-        string callGetClassName() {
-            string a = getClassName();
-            return a;
-        }
+        string getClassName();
         void moveAnimal(); // method pergerakan Goat
         bool isHungry(); // true jika Goat dalam keadaan lapar
         void eat();

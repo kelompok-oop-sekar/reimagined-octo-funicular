@@ -17,13 +17,7 @@ class Cow : public MeatProducingFarmAnimal, public MilkProducingFarmAnimal {
         int tickDie;
 		static string className;
     public :
-		
-		string callGetClassName() {
-			string a = getClassName();
-			return a;
-		}
-		
-		static string getClassName();
+		string getClassName();
         /* ctor
             _x merepresentasikan koordinat sumbu x
             _y merepresentasikan koordinat sumbu y

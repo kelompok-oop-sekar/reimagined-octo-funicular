@@ -19,11 +19,7 @@ class Sheep : public MeatProducingFarmAnimal, public MilkProducingFarmAnimal {
             _y merepresentasikan koordinat sumbu y
             */
         Sheep(int _x, int _y);
-        static string getClassName();
-        string callGetClassName() {
-            string a = getClassName();
-            return a;
-        }
+        string getClassName();
         void moveAnimal(); // method pergerakan Sheep
         bool isHungry(); // true jika Sheep dalam keadaan lapar
         void eat();

@@ -18,11 +18,7 @@ class Chicken : public EggProducingFarmAnimal, public MeatProducingFarmAnimal {
             _y merepresentasikan koordinat sumbu y
             */
         Chicken(int _x, int _y);
-        static string getClassName();
-        string callGetClassName() {
-            string a = getClassName();
-            return a;
-        }
+        string getClassName();
         void moveAnimal(); // method pergerakan Chicken
         bool isHungry(); // menghasilkan true jika Chicken dalam keadaan lapar
         void eat();

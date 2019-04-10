@@ -1,5 +1,6 @@
 #include "Player.h"
 #include <iostream>
+#include <map>
 using namespace std;
 
 // ctor dengan kapasitas wadah air default.
@@ -30,47 +31,39 @@ Player::Player(int capacity, int coin) {
 // 'd' = right
 void Player::move(char direction) {
 	if (direction == 'w') {
-		if (y == 0) {
+		if (x == 0) {
 			cout << "Player has reached top boundary" << endl;
 		}
 		else {
-			if (!isObjectExist(x, y - 1)) {
-				y--;
-				cout << "Player moves up" << endl;
-			}
+			x--;
+			cout << "Player moves up" << endl;
 		}
 	}
 	else if (direction == 'a') {
-		if (x == 0) {
+		if (y == 0) {
 			cout << "Player has reached left boundary" << endl;
 		}
 		else {
-			if (!isObjectExist(x - 1, y)) {
-				x--;
-				cout << "Player moves left" << endl;
-			}
+			y--;
+			cout << "Player moves left" << endl;
 		}
 	}
 	else if (direction == 's') {
-		if (y == 7) {
+		if (x == 8) {
 			cout << "Player has reached bottom boundary" << endl;
 		}
 		else {
-			if (!isObjectExist(x, y + 1)) {
-				y++;
-				cout << "Player moves down" << endl;
-			}
+			x++;
+			cout << "Player moves down" << endl;
 		}
 	}
 	else if (direction == 'd') {
-		if (x == 7) {
+		if (y == 8) {
 			cout << "Player has reached right boundary" << endl;
 		}
 		else {
-			if (!isObjectExist(x + 1, y)) {
-				x++;
-				cout << "Player moves right" << endl;
-			}
+			y++;
+			cout << "Player moves right" << endl;
 		}
 	}
 	else {
@@ -132,7 +125,7 @@ void Player::control() {
 		move(input);
 	}
 	else if (input == 'i') {
-		seeInventory();
+		//do something here
 	}
 	else {
 		cout << "Invalid input" << endl;
@@ -165,15 +158,4 @@ void Player::printCan() {
 
 void Player::printMoney() {
 	cout << "Money : " << money << endl;
-}
-
-void Player::seeInventory() {
-	if (inventory.isEmpty()) {
-		cout << "No items in inventory" << endl;
-	}
-	else {
-		for (int i = 0; i < inventory.getSize(); i++) {
-			cout << inventory.get(i)->callGetClassName() << endl;
-		}
-	}
 }
