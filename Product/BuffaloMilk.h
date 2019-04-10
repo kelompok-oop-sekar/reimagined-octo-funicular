@@ -11,13 +11,8 @@ private:
 	static int n; //Mengembalikan jumlah dari BuffaloMilk yang dimiliki oleh pemain
 	static int price; //Mengembalikan harga dari BuffaloMilk saat penjualan
 public:
-	string callGetClassName() {
-		string a = getClassName();
-		return a;
-	}
-	static string getClassName();
-	static int getNProduct(); //mengembalikan jumlah buffalomeat yang dimiliki player
-	static int getPrice(); // mengembalikan harga buffalomeat jika terjual
+	string getClassName();
+	int getPrice(); // mengembalikan harga buffalomeat jika terjual
 };
 
 #endif

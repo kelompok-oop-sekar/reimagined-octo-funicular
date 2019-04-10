@@ -11,13 +11,8 @@ private:
 	static int n; // jumlah buffalomeat yang dimiliki player
 	static int price; // harga buffalomeat
 public:
-	string callGetClassName() {
-		string a = getClassName();
-		return a;
-	}
-	static string getClassName();
-	static int getNProduct(); //mengembalikan jumlah buffalomeat yang dimiliki player
-	static int getPrice(); // mengembalikan harga buffalomeat jika terjual
+	string getClassName();
+	int getPrice(); // mengembalikan harga buffalomeat jika terjual
 };
 
 #endif

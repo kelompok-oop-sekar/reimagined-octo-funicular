@@ -10,12 +10,8 @@ private:
 	static string className;
 	static int price; //harga dari daging ayam jika dijual
 public:
-	string callGetClassName() {
-		string a = getClassName();
-		return a;
-	}
-	static string getClassName();
-	static int getPrice(); //mengembalikan harga dari telur ayam
+	string getClassName();
+	int getPrice(); //mengembalikan harga dari telur ayam
 };
 
 #endif
