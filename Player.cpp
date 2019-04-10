@@ -217,7 +217,7 @@ void Player::interact(char dir) {
 
 // Menyembelih hewan "MeatProducingFarmAnimal" untuk mendapatkan
 // "Product" daging.
-void Player::kill(LinkedList<FarmAnimal*> List, char direction) {
+void Player::kill(LinkedList<FarmAnimal*>* List, char direction) {
 	/* direction :
 		w -> atas
 		d -> kanan
@@ -258,13 +258,13 @@ void Player::kill(LinkedList<FarmAnimal*> List, char direction) {
 
 	int i = 0;
 	// -- ukuran List
-	int size = List.getSize();
+	int size = List->getSize();
 	// -- boolean found animal terdekat player
 	bool found = false;
 
 	while ((i < size) && (!found)) {
-		int xAnimalPos = List.get(i)->getX();
-		int yAnimalPos = List.get(i)->getY();
+		int xAnimalPos = List->get(i)->getX();
+		int yAnimalPos = List->get(i)->getY();
 		if ((xAnimalPos == xPos + deltaX) && (yAnimalPos == yPos + deltaY)) {
 			found = true;
 		}
@@ -276,7 +276,7 @@ void Player::kill(LinkedList<FarmAnimal*> List, char direction) {
 	if (found) {
 		cout << "Player gained meat" << endl;
 		string animalClassName;
-		animalClassName = List.get(i)->getClassName();
+		animalClassName = List->get(i)->getClassName();
 		// mendeteksi kelas riil animal
 		if (animalClassName.compare("Buffalo") == 0) {
 			BuffaloMeat* result = new BuffaloMeat();
@@ -312,8 +312,8 @@ void Player::kill(LinkedList<FarmAnimal*> List, char direction) {
 			this->inventory.add(result);
 		}
 		// menghapus animal dari List animal
-		delete List.get(i);
-		List.remove(i);
+		delete List->get(i);
+		List->remove(i);
 	}
 }
 
@@ -338,7 +338,7 @@ void Player::control(LinkedList<FarmAnimal*>* List) {
 	else if (input == 'k') {
 		cout << "direction : ";
 		cin >> dir;
-		kill(*List, dir);
+		kill(List, dir);
 	}
 	else if (input == 't') {
 		cout << "direction : ";

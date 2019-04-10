@@ -74,7 +74,7 @@ int main() {
 		player.control(&listofanimal);
 		player.printCan();
 		player.printMoney();
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < listofanimal.getSize(); i++) {
 			listofanimal.get(i)->moveAnimal();
 			listofanimal.get(i)->eat(listofcell);
 		}
