@@ -1,8 +1,3 @@
-#/bin/sh
+g++ -c LinkedList.cpp main.cpp Player.cpp Renderable.cpp Cell/Barn.cpp Cell/Cell.cpp Cell/Coop.cpp Cell/Facility.cpp Cell/Grassland.cpp Cell/Land.cpp Cell/Mixer.cpp Cell/Truck.cpp Cell/Well.cpp FarmAnimal/Buffalo.cpp FarmAnimal/Chicken.cpp FarmAnimal/Cow.cpp FarmAnimal/Duck.cpp FarmAnimal/EggProducingFarmAnimal.cpp FarmAnimal/FarmAnimal.cpp FarmAnimal/Goat.cpp FarmAnimal/MeatProducingFarmAnimal.cpp FarmAnimal/MilkProducingFarmAnimal.cpp FarmAnimal/Sheep.cpp Product/BuffaloMeat.cpp Product/BuffaloMilk.cpp Product/Cheese.cpp Product/ChickenEgg.cpp Product/ChickenMeat.cpp Product/ChickenOmelette.cpp Product/CowMeat.cpp Product/CowMilk.cpp Product/DuckEgg.cpp Product/FarmProduct.cpp Product/GoatMeat.cpp Product/GoatMilk.cpp Product/Product.cpp Product/SheepMeat.cpp Product/SheepMilk.cpp Product/SideProduct.cpp Product/XXNormalChicken.cpp
 
-g++ -c *.cpp
-g++ -c FarmAnimal/*.cpp
-g++ -c Cell/*.cpp
-g++ -c Product/*.cpp
-g++ -o main *.o
-./main
+g++ -o main Barn.o BuffaloMeat.o BuffaloMilk.o Buffalo.o Cell.o Cheese.o ChickenEgg.o ChickenMeat.o Chicken.o ChickenOmelette.o Coop.o CowMeat.o CowMilk.o Cow.o DuckEgg.o Duck.o EggProducingFarmAnimal.o Facility.o FarmAnimal.o FarmProduct.o GoatMeat.o GoatMilk.o Goat.o Grassland.o Land.o LinkedList.o main.o MeatProducingFarmAnimal.o MilkProducingFarmAnimal.o Mixer.o Player.o Product.o Renderable.o SheepMeat.o SheepMilk.o Sheep.o SideProduct.o Truck.o Well.o XXNormalChicken.o
