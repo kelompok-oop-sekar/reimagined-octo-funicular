@@ -10,10 +10,6 @@ private:
 	static string className;
 	static int price;//Harga dari sheepmilk setiap satuannya
 public :
-	string callGetClassName() {
-		string a = getClassName();
-		return a;
-	}
 	static string getClassName();
 	static int getPrice();//Mengembalikan harga dari sheepmilk setiap satuannya
 };
