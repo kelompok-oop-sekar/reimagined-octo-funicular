@@ -15,7 +15,7 @@ string Goat::getClassName()
 {
     return className;
 }
-void Sheep::moveAnimal() // method pergerakan Sheep
+void Goat::moveAnimal() // method pergerakan Sheep
 {
     int randomVal = 1 + rand() % 4;
 
