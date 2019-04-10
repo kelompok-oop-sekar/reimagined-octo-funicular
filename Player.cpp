@@ -49,7 +49,7 @@ void Player::move(char direction) {
 		}
 	}
 	else if (direction == 's') {
-		if (y == 8) {
+		if (y == 7) {
 			cout << "Player has reached bottom boundary" << endl;
 		}
 		else {
@@ -58,7 +58,7 @@ void Player::move(char direction) {
 		}
 	}
 	else if (direction == 'd') {
-		if (x == 8) {
+		if (x == 7) {
 			cout << "Player has reached right boundary" << endl;
 		}
 		else {
