@@ -17,44 +17,44 @@ string Chicken::getClassName()
 }
 void Chicken::moveAnimal() // method pergerakan Chicken
 {
-    int randomVal = 1 + rand() % 4;
+	int randomVal = 1 + rand() % 4;
 
-    switch (randomVal) {
-        case 1 : {
-            if ((FarmAnimal::x+1) >= 6 && (FarmAnimal::x+1 <=8)) {
-                FarmAnimal::x++;
-            }
-        }
-        break;
-        case 2 : {
-            if ((FarmAnimal::x-1) >= 6 && (FarmAnimal::x-1 <=8)) {
-                FarmAnimal::x--;
-            }
-        }
-        break;
-        case 3 : {
-            if ((FarmAnimal::y+1) >= 6 && (FarmAnimal::y+1 <=8)) {
-                FarmAnimal::y++;
-            }
-        }
-        break;
-        case 4 : {
-            if ((FarmAnimal::y-1) >= 6 && (FarmAnimal::y-1 <=8)) {
-                FarmAnimal::y--;
-            }
-        }
-        break;
-        default : {
-            // do nothing
-        }
-    }
+	switch (randomVal) {
+	case 1: {
+		if ((FarmAnimal::x + 1) >= 6 && (FarmAnimal::x + 1 <= 8) && !isObjectExist(x + 1, y)) {
+			FarmAnimal::x++;
+		}
+	}
+			break;
+	case 2: {
+		if ((FarmAnimal::x - 1) >= 6 && (FarmAnimal::x - 1 <= 8) && !isObjectExist(x - 1, y)) {
+			FarmAnimal::x--;
+		}
+	}
+			break;
+	case 3: {
+		if ((FarmAnimal::y + 1) >= 6 && (FarmAnimal::y + 1 <= 8) && !isObjectExist(x, y + 1)) {
+			FarmAnimal::y++;
+		}
+	}
+			break;
+	case 4: {
+		if ((FarmAnimal::y - 1) >= 6 && (FarmAnimal::y - 1 <= 8) && !isObjectExist(x, y - 1)) {
+			FarmAnimal::y--;
+		}
+	}
+			break;
+	default: {
+		// do nothing
+	}
+	}
 
-    if (tickHungry>0) {
-        tickHungry--;
-    }
-    if (tickHungry==0) {
-        tickDie--;
-    }
+	if (tickHungry > 0) {
+		tickHungry--;
+	}
+	if (tickHungry == 0) {
+		tickDie--;
+	}
 }
 bool Chicken::isHungry() // menghasilkan true jika Chicken dalam keadaan lapar
 {

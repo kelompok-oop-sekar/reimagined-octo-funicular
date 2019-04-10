@@ -15,31 +15,31 @@ string Goat::getClassName()
 {
     return className;
 }
-void Goat::moveAnimal() // method pergerakan Goat
+void Sheep::moveAnimal() // method pergerakan Sheep
 {
     int randomVal = 1 + rand() % 4;
 
     switch (randomVal) {
         case 1 : {
-            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6)) {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
                 FarmAnimal::x++;
             }
         }
         break;
         case 2 : {
-            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6)) {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
                 FarmAnimal::x--;
             }
         }
         break;
         case 3 : {
-            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6)) {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
                 FarmAnimal::y++;
             }
         }
         break;
         case 4 : {
-            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6)) {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
                 FarmAnimal::y--;
             }
         }
@@ -55,6 +55,526 @@ void Goat::moveAnimal() // method pergerakan Goat
     if (tickHungry==0) {
         tickDie--;
     }
+}void Sheep::moveAnimal() // method pergerakan Sheep
+{
+    int randomVal = 1 + rand() % 4;
+
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
+
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
+}void Sheep::moveAnimal() // method pergerakan Sheep
+{
+    int randomVal = 1 + rand() % 4;
+
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
+
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
+}void Sheep::moveAnimal() // method pergerakan Sheep
+{
+    int randomVal = 1 + rand() % 4;
+
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
+
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
+}void Sheep::moveAnimal() // method pergerakan Sheep
+{
+    int randomVal = 1 + rand() % 4;
+
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
+
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
+}void Sheep::moveAnimal() // method pergerakan Sheep
+{
+    int randomVal = 1 + rand() % 4;
+
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
+
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
+}void Sheep::moveAnimal() // method pergerakan Sheep
+{
+    int randomVal = 1 + rand() % 4;
+
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
+
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
+}void Sheep::moveAnimal() // method pergerakan Sheep
+{
+    int randomVal = 1 + rand() % 4;
+
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
+
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
+}void Sheep::moveAnimal() // method pergerakan Sheep
+{
+    int randomVal = 1 + rand() % 4;
+
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
+
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
+}void Sheep::moveAnimal() // method pergerakan Sheep
+{
+    int randomVal = 1 + rand() % 4;
+
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
+
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
+}void Sheep::moveAnimal() // method pergerakan Sheep
+{
+    int randomVal = 1 + rand() % 4;
+
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
+
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
+}void Sheep::moveAnimal() // method pergerakan Sheep
+{
+    int randomVal = 1 + rand() % 4;
+
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
+
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
+}void Sheep::moveAnimal() // method pergerakan Sheep
+{
+    int randomVal = 1 + rand() % 4;
+
+    switch (randomVal) {
+        case 1 : {
+            if ((FarmAnimal::x+1) >= 0 && (FarmAnimal::x+1 <=6) && !isObjectExist(x+1,y)) {
+                FarmAnimal::x++;
+            }
+        }
+        break;
+        case 2 : {
+            if ((FarmAnimal::x-1) >= 0 && (FarmAnimal::x-1 <=6) && !isObjectExist(x - 1, y)) {
+                FarmAnimal::x--;
+            }
+        }
+        break;
+        case 3 : {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=6) && !isObjectExist(x, y + 1)) {
+                FarmAnimal::y++;
+            }
+        }
+        break;
+        case 4 : {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=6) && !isObjectExist(x, y - 1)) {
+                FarmAnimal::y--;
+            }
+        }
+        break;
+        default : {
+            // do nothing
+        }
+    }
+
+    if (tickHungry>0) {
+        tickHungry--;
+    }
+    if (tickHungry==0) {
+        tickDie--;
+    }
+}void Goat::moveAnimal() // method pergerakan Sheep
+{
+	int randomVal = 1 + rand() % 4;
+
+	switch (randomVal) {
+	case 1: {
+		if ((FarmAnimal::x + 1) >= 0 && (FarmAnimal::x + 1 <= 6) && !isObjectExist(x + 1, y)) {
+			FarmAnimal::x++;
+		}
+	}
+			break;
+	case 2: {
+		if ((FarmAnimal::x - 1) >= 0 && (FarmAnimal::x - 1 <= 6) && !isObjectExist(x - 1, y)) {
+			FarmAnimal::x--;
+		}
+	}
+			break;
+	case 3: {
+		if ((FarmAnimal::y + 1) >= 0 && (FarmAnimal::y + 1 <= 6) && !isObjectExist(x, y + 1)) {
+			FarmAnimal::y++;
+		}
+	}
+			break;
+	case 4: {
+		if ((FarmAnimal::y - 1) >= 0 && (FarmAnimal::y - 1 <= 6) && !isObjectExist(x, y - 1)) {
+			FarmAnimal::y--;
+		}
+	}
+			break;
+	default: {
+		// do nothing
+	}
+	}
+
+	if (tickHungry > 0) {
+		tickHungry--;
+	}
+	if (tickHungry == 0) {
+		tickDie--;
+	}
 }
 bool Goat::isHungry() // true jika Goat dalam keadaan lapar
 {
