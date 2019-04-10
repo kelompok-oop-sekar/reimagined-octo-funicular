@@ -8,8 +8,8 @@ using namespace std;
 
 // ctor dengan kapasitas wadah air default.
 Player::Player() {
-    wateringCan = 5;
-    money = 5000;
+	wateringCan = 5;
+	money = 5000;
 	Product* a = new ChickenEgg();
 	inventory.add(a);
 	x = 4;
@@ -18,8 +18,8 @@ Player::Player() {
 
 // ctor dengan kapasitas wadah air.
 Player::Player(int capacity, int coin) {
-    wateringCan = capacity;
-    money = coin;
+	wateringCan = capacity;
+	money = coin;
 	Product* a = new ChickenEgg();
 	inventory.add(a);
 	x = 4;
@@ -98,25 +98,25 @@ void Player::talk(LinkedList<FarmAnimal*> List, int direction) {
 	int deltaY = 0;
 
 	switch (direction) {
-		case 1 : {
-			deltaY = -1;
-		}
-		break;
-		case 2 : {
-			deltaX = 1;
-		}
-		break;
-		case 3 : {
-			deltaY = 1;
-		}
-		break;
-		case 4 : {
-			deltaX = -1;
-		}
-		break;
-		default : {
-			// do nothing
-		}
+	case 1: {
+		deltaY = -1;
+	}
+			break;
+	case 2: {
+		deltaX = 1;
+	}
+			break;
+	case 3: {
+		deltaY = 1;
+	}
+			break;
+	case 4: {
+		deltaX = -1;
+	}
+			break;
+	default: {
+		// do nothing
+	}
 	}
 
 	// -- Player position
@@ -129,12 +129,13 @@ void Player::talk(LinkedList<FarmAnimal*> List, int direction) {
 	// -- boolean found animal terdekat player
 	bool found = false;
 
-	while (i<size && !found) {
+	while (i < size && !found) {
 		int xAnimalPos = List.get(i)->getX();
 		int yAnimalPos = List.get(i)->getY();
-		if ((xAnimalPos == xPos+deltaX) && (yAnimalPos == yPos+deltaY)) {
+		if ((xAnimalPos == xPos + deltaX) && (yAnimalPos == yPos + deltaY)) {
 			found = true;
-		} else {
+		}
+		else {
 			i++;
 		}
 	}
@@ -165,11 +166,11 @@ void Player::talk(LinkedList<FarmAnimal*> List, int direction) {
 //void interact(EggProducingFarmAnimal& animal) {
 
 //void interact(MilkProducingFarmAnimal& animal);
-void Player::interact(Well& well){
+void Player::interact(Well& well) {
 	wateringCan = 10;
 }
 
-void Player::interact(Truck& truck){
+void Player::interact(Truck& truck) {
 }
 
 // Menyembelih hewan "MeatProducingFarmAnimal" untuk mendapatkan
@@ -189,25 +190,25 @@ void Player::kill(LinkedList<FarmAnimal*> List, int direction) {
 	int deltaY = 0;
 
 	switch (direction) {
-		case 1 : {
-			deltaY = -1;
-		}
-		break;
-		case 2 : {
-			deltaX = 1;
-		}
-		break;
-		case 3 : {
-			deltaY = 1;
-		}
-		break;
-		case 4 : {
-			deltaX = -1;
-		}
-		break;
-		default : {
-			// do nothing
-		}
+	case 1: {
+		deltaY = -1;
+	}
+			break;
+	case 2: {
+		deltaX = 1;
+	}
+			break;
+	case 3: {
+		deltaY = 1;
+	}
+			break;
+	case 4: {
+		deltaX = -1;
+	}
+			break;
+	default: {
+		// do nothing
+	}
 	}
 	// -- Player position
 	int xPos = this->getX();
@@ -219,16 +220,17 @@ void Player::kill(LinkedList<FarmAnimal*> List, int direction) {
 	// -- boolean found animal terdekat player
 	bool found = false;
 
-	while ((i<size) && (!found)) {
+	while ((i < size) && (!found)) {
 		int xAnimalPos = List.get(i)->getX();
 		int yAnimalPos = List.get(i)->getY();
-		if ((xAnimalPos == xPos+deltaX) && (yAnimalPos == yPos+deltaY)) {
+		if ((xAnimalPos == xPos + deltaX) && (yAnimalPos == yPos + deltaY)) {
 			found = true;
-		} else {
+		}
+		else {
 			i++;
 		}
 	}
-	
+
 	if (found) {
 		cout << "Player gained meat" << endl;
 		string animalClassName;
@@ -236,27 +238,32 @@ void Player::kill(LinkedList<FarmAnimal*> List, int direction) {
 		// mendeteksi kelas riil animal
 		if (animalClassName.compare("Buffalo") == 0) {
 			BuffaloMeat* result = new BuffaloMeat();
-		} else if (animalClassName.compare("Chicken") == 0) {
+		}
+		else if (animalClassName.compare("Chicken") == 0) {
 			ChickenMeat* result = new ChickenMeat();
 
 			// menambahkan result ke inventory player
 			this->inventory.add(result);
-		} else if (animalClassName.compare("Cow") == 0) {
+		}
+		else if (animalClassName.compare("Cow") == 0) {
 			CowMeat* result = new CowMeat();
 
 			// menambahkan result ke inventory player
 			this->inventory.add(result);
-		} else if (animalClassName.compare("Duck") == 0) {
+		}
+		else if (animalClassName.compare("Duck") == 0) {
 			DuckMeat* result = new DuckMeat();
 
 			// menambahkan result ke inventory player
 			this->inventory.add(result);
-		} else if (animalClassName.compare("Goat") == 0) {
+		}
+		else if (animalClassName.compare("Goat") == 0) {
 			GoatMeat* result = new GoatMeat();
 
 			// menambahkan result ke inventory player
 			this->inventory.add(result);
-		} else if (animalClassName.compare("Sheep") == 0) {
+		}
+		else if (animalClassName.compare("Sheep") == 0) {
 			SheepMeat* result = new SheepMeat();
 
 			// menambahkan result ke inventory player
@@ -299,7 +306,7 @@ void Player::mix(FarmProduct& o1, FarmProduct& o2) {
 
 // Melakukan render.
 char Player::render() {
-    return 'P';
+	return 'P';
 }
 
 int Player::getX() {
@@ -324,7 +331,7 @@ void Player::seeInventory() {
 	}
 	else {
 		for (int i = 0; i < inventory.getSize(); i++) {
-			cout << inventory.get(i)->GetClassName() << endl;
+			cout << inventory.get(i)->getClassName() << endl;
 		}
 	}
 }
