@@ -32,7 +32,7 @@ class FarmAnimal : public Renderable {
       virtual void sounding()=0;
       // prosedur memakan rumput jika land yang dipijak berumput
       virtual void eat()=0;
-      virtual string getClassName() {}
+	  virtual string getClassName() { return ""; }
 };
 
 #endif
