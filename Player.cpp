@@ -352,7 +352,7 @@ void Player::control(LinkedList<FarmAnimal*>* List, LinkedList<Cell*> List2) {
 	}
 	else if (input == 'g') {
 		List.get(y * 8 + x)->setGrass(true);
-		wateringCan++;
+		wateringCan--;
 	}
 	else {
 		cout << "Invalid input" << endl;
