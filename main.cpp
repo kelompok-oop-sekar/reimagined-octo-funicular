@@ -71,7 +71,7 @@ int main() {
 			Renderable::setMap(listofanimal.get(i)->getX(), listofanimal.get(i)->getY(), listofanimal.get(i)->render());
 		}
 		Renderable::display();
-		player.control(&listofanimal);
+		player.control(&listofanimal,listofcell);
 		player.printCan();
 		player.printMoney();
 		for (int i = 0; i < listofanimal.getSize(); i++) {

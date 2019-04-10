@@ -34,7 +34,7 @@ public:
     // 'd' = right
     void move(char direction);
 
-	void control(LinkedList<FarmAnimal*>* List);
+	void control(LinkedList<FarmAnimal*>* List, LinkedList<Cell*> List2);
 
     // Berbicara dengan hewan.
     void talk(LinkedList<FarmAnimal*> List, char direction);

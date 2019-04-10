@@ -325,7 +325,7 @@ void Player::grow(Land& land) {
 	land.setGrass(true);
 }
 
-void Player::control(LinkedList<FarmAnimal*>* List) {
+void Player::control(LinkedList<FarmAnimal*>* List, LinkedList<Cell*> List2) {
 	char input;
 	char dir;
 	cin >> input;
@@ -349,6 +349,13 @@ void Player::control(LinkedList<FarmAnimal*>* List) {
 		cout << "direction : ";
 		cin >> dir;
 		interact(dir);
+	}
+	else if (input == 'g') {
+		List.get(y * 8 + x)->setGrass(true);
+		wateringCan++;
+	}
+	else {
+		cout << "Invalid input" << endl;
 	}
 }
 
