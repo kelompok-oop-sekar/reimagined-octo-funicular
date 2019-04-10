@@ -1,6 +1,5 @@
 #include "Player.h"
 #include <iostream>
-#include <map>
 using namespace std;
 
 // ctor dengan kapasitas wadah air default.
@@ -166,4 +165,15 @@ void Player::printCan() {
 
 void Player::printMoney() {
 	cout << "Money : " << money << endl;
+}
+
+void Player::seeInventory() {
+	if (inventory.isEmpty()) {
+		cout << "No items in inventory" << endl;
+	}
+	else {
+		for (int i = 0; i < inventory.getSize(); i++) {
+			cout << inventory.get(i)->callGetClassName() << endl;
+		}
+	}
 }

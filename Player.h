@@ -2,7 +2,6 @@
 #define PLAYER_H
 
 #include <iostream>
-#include <map>
 using namespace std;
 // Player merupakan kelas yang mendefinisikan 'command' yang bisa diperintahkan
 // saat menjalankan program.
@@ -86,6 +85,8 @@ public:
 
 	void printCan();
 	void printMoney();
+
+	void seeInventory();
 };
 
 #endif
