@@ -10,10 +10,7 @@ private:
 	static string className;
 	static int price; //harga jual setiap satu chickenegg
 public:
-	string callGetClassName() {
-		string a = getClassName();
-		return a;
-	}
+
 	static string getClassName();
 	static int getPrice(); //mengembalikan jumlah harga yang didapat pada saat penjualan chickenegg
 };
