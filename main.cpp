@@ -22,6 +22,13 @@ int main() {
 		
 		/* untuk semua hewan di dalam linked list, move. dan tambah tick*/
 	
+                          
+	std::cout << ",---.          o     |   /" << std::endl;
+	std::cout << "|--- ,---.,---..,---.|__/ " << std::endl;
+	std::cout << "|    |   ||   ||`---.|  \\ " << std::endl;
+	std::cout << "`---'`   '`---|``---'`   `" << std::endl;
+	std::cout << "          `---'           " << std::endl;
+
 	LinkedList<FarmAnimal*> listofanimal;
 	FarmAnimal* a = new Chicken(6,6);
 	listofanimal.add(a);

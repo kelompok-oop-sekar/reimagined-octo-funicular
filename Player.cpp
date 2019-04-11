@@ -213,6 +213,31 @@ void Player::interact(char dir) {
 	else if (Map[x + deltaX][y + deltaY] == 'W') {
 		wateringCan = 10;
 	}
+	else if (Map[x + deltaX][y + deltaY] == 'M') {
+
+		if (inventory.getSize() > 1) {
+			seeInventory();
+			cout << "Select ingredients" << endl;
+			int a, b;
+			cout << "First ingredient : ";
+			cin >> a;
+			cout << "Second ingredient : ";
+			cin >> b;
+			mix(inventory.get(a), inventory.get(b));
+			if (a > b) {
+				inventory.remove(a);
+				inventory.remove(b);
+			}
+			else {
+				inventory.remove(b);
+				inventory.remove(a);
+			}
+		}
+		else {
+			cout << "You don't have enough items in your inventory" << endl;
+		}
+
+	}
 }
 
 // Menyembelih hewan "MeatProducingFarmAnimal" untuk mendapatkan
@@ -362,22 +387,22 @@ void Player::control(LinkedList<FarmAnimal*>* List, LinkedList<Cell*> List2) {
 // Membuat "SideProduct" dengan "Mixer":
 // 	Mengombinasikan bahan-bahan dari tas (minimal 2 bahan
 // 	[boleh sama]; cara implementasi bebas) 
-SideProduct Player::mix(FarmProduct* o1, FarmProduct* o2) {
-	if ((o1->getClassName() == "ChickenMeat" && o2->getClassName() == "ChickenEgg") || (o2->getClassName() == "ChickenMeat" && o1->getClassName() == "ChickenEgg")) {
-		XXNormalChicken side;
-		return side;
+void Player::mix(Product* o1, Product* o2) {
+	if ((o1->getClassName().compare("ChickenMeat") && o2->getClassName().compare("ChickenEgg")) || (o2->getClassName().compare("ChickenMeat") && o1->getClassName().compare("ChickenEgg"))) {
+		XXNormalChicken* side = new XXNormalChicken();
+		inventory.add(side);
 	}
-	else if (o1->getClassName() == "CowMilk" && o2->getClassName() == "CowMilk") {
-		Cheese side;
-		return side;
+	else if (o1->getClassName().compare("CowMilk") && o2->getClassName().compare("CowMilk")) {
+		Cheese* side = new Cheese();
+		inventory.add(side);
 	}
-	else if (o1->getClassName() == "ChickenEgg" && o2->getClassName() == "ChickenEgg") {
-		ChickenOmelette side;
-		return side;
+	else if (o1->getClassName().compare("ChickenEgg") && o2->getClassName().compare("ChickenEgg")) {
+		ChickenOmelette* side = new ChickenOmelette();
+		inventory.add(side);
 	}
 	else {
-		Junk side;
-		return side;
+		Junk* side = new Junk();
+		inventory.add(side);
 	}
 }
 
