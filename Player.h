@@ -60,7 +60,7 @@ public:
     //void interact(EggProducingFarmAnimal& animal) {
 	
     //void interact(MilkProducingFarmAnimal& animal);
-    void interact(char dir);
+    void interact(char dir, LinkedList<FarmAnimal*> List);
 
     // Menyembelih hewan "MeatProducingFarmAnimal" untuk mendapatkan
     // "Product" daging.

@@ -29,6 +29,7 @@ class Sheep : public MeatProducingFarmAnimal, public MilkProducingFarmAnimal {
             2. Mati karena dipotong player (void killed)
             */
         char render();
+		bool isDie();
 };
 
 #endif

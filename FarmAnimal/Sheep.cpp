@@ -5,7 +5,7 @@
 
 string Sheep::className = "Sheep";
 
-Sheep::Sheep(int _x, int _y) : MilkProducingFarmAnimal(_x,_y,false) , MeatProducingFarmAnimal(_x,_y,false) , FarmAnimal(_x,_y)
+Sheep::Sheep(int _x, int _y) : MilkProducingFarmAnimal(_x,_y,true) , MeatProducingFarmAnimal(_x,_y,true) , FarmAnimal(_x,_y)
 {
     tickDie = 5;
     tickHungry = 8;
@@ -32,13 +32,13 @@ void Sheep::moveAnimal() // method pergerakan Sheep
         }
         break;
         case 3 : {
-            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=5) && !isObjectExist(x, y + 1)) {
+            if ((FarmAnimal::y+1) >= 0 && (FarmAnimal::y+1 <=2) && !isObjectExist(x, y + 1)) {
                 FarmAnimal::y++;
             }
         }
         break;
         case 4 : {
-            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=5) && !isObjectExist(x, y - 1)) {
+            if ((FarmAnimal::y-1) >= 0 && (FarmAnimal::y-1 <=2) && !isObjectExist(x, y - 1)) {
                 FarmAnimal::y--;
             }
         }
@@ -62,12 +62,12 @@ bool Sheep::isHungry() // true jika Sheep dalam keadaan lapar
 void Sheep::eat(LinkedList<Cell*> List)
 {
 	if (tickDie < 5) {
-		FarmAnimal::eat(List);
-		if (!MilkProducingFarmAnimal::milk && (Map[x][y] == '@' || Map[x][y] == '#' || Map[x][y] == '*')) {
+		if ((Map[x][y] == '@' || Map[x][y] == '#' || Map[x][y] == '*')) {
+			FarmAnimal::eat(List);
 			MilkProducingFarmAnimal::milk == true;
+			tickDie = 5;
+			tickHungry = 8;
 		}
-		tickDie = 5;
-		tickHungry = 8;
 	}
 }
 void Sheep::sounding() // menuliskan "Mbeek.. Mbeek.." ke layar ketika player melakukan Talk
@@ -81,4 +81,8 @@ char Sheep::render()
     } else {
         return 'S';
     }
+}
+
+bool Sheep::isDie() {
+	return tickDie <= 0;
 }

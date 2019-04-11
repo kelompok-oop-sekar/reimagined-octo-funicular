@@ -1,5 +1,5 @@
 #include <iostream>
-#include <stdlib.h>
+#include <cstdlib>
 #include "Classes.h"
 
 int main() {
@@ -32,9 +32,9 @@ int main() {
 	LinkedList<FarmAnimal*> listofanimal;
 	FarmAnimal* a = new Chicken(6,6);
 	listofanimal.add(a);
-	a = new Goat(3,3);
+	a = new Goat(1,2);
 	listofanimal.add(a);
-	a = new Sheep(5,5);
+	a = new Sheep(6,1);
 	listofanimal.add(a);
 	
 	// inisialisasi kondisi awal sampai -HERE
@@ -68,7 +68,7 @@ int main() {
 
 	//-HERE
 
-	while (true) {
+	while (!listofanimal.isEmpty()) {
 		for (int i = 0; i < 64; i++) {
 			Renderable::setMap(listofcell.get(i)->getX(), listofcell.get(i)->getY(), listofcell.get(i)->render());
 		}
@@ -83,10 +83,35 @@ int main() {
 		player.control(&listofanimal,listofcell);
 		player.printCan();
 		player.printMoney();
-		for (int i = 0; i < listofanimal.getSize(); i++) {
-			listofanimal.get(i)->moveAnimal();
-			listofanimal.get(i)->eat(listofcell);
+		int i = 0;
+		while (i < listofanimal.getSize()) {
+			if (listofanimal.get(i)->isDie()) {
+				listofanimal.remove(i);
+			}
+			else {
+				listofanimal.get(i)->moveAnimal();
+				listofanimal.get(i)->eat(listofcell);
+				i++;
+			}
 		}
 	}
+
+	for (int i = 0; i < listofanimal.getSize(); i++) {
+		Renderable::setMap(listofanimal.get(i)->getX(), listofanimal.get(i)->getY(), listofanimal.get(i)->render());
+	}
+	Renderable::display();
+
+	std::cout << ".|'''''|      /.\\      '||\\   /||` '||''''| " << std::endl;
+	std::cout << "|| .         // \\\\      ||\\\\.//||   ||   .  " << std::endl;
+	std::cout << "|| |''||    //...\\\\     ||     ||   ||'''|  " << std::endl;
+	std::cout << "||    ||   //     \\\\    ||     ||   ||      " << std::endl;
+	std::cout << "`|....|' .//       \\\\. .||     ||. .||....| " << std::endl;
+	std::cout << endl;
+	std::cout << ".|''''|, \\\\      // '||''''| '||'''|, " << std::endl;
+	std::cout << "||    ||  \\\\    //   ||   .   ||   || " << std::endl;
+	std::cout << "||    ||   \\\\  //    ||'''|   ||...|' " << std::endl;
+	std::cout << "||    ||    \\\\//     ||       || \\\\   " << std::endl;
+	std::cout << "`|....|'     \\/     .||....| .||  \\\\. " << std::endl;
+
 	return 0;
 }

@@ -6,7 +6,7 @@ using namespace std;
 
 string Chicken::className = "Chicken";
 
-Chicken::Chicken(int _x, int _y) : EggProducingFarmAnimal(_x,_y,false) , MeatProducingFarmAnimal(_x,_y,false) , FarmAnimal(_x,_y)
+Chicken::Chicken(int _x, int _y) : EggProducingFarmAnimal(_x,_y,true) , MeatProducingFarmAnimal(_x,_y,true) , FarmAnimal(_x,_y)
 {
     tickDie = 5;
     tickHungry = 7;
@@ -63,12 +63,12 @@ bool Chicken::isHungry() // menghasilkan true jika Chicken dalam keadaan lapar
 void Chicken::eat(LinkedList<Cell*> List)
 {
 	if (tickDie < 5) {
-		FarmAnimal::eat(List);
-		if (!EggProducingFarmAnimal::egg && (Map[x][y] == '@' || Map[x][y] == '#' || Map[x][y] == '*')) {
+		if ((Map[x][y] == '@' || Map[x][y] == '#' || Map[x][y] == '*')) {
+			FarmAnimal::eat(List);
 			EggProducingFarmAnimal::egg == true;
+			tickDie = 5;
+			tickHungry = 7;
 		}
-		tickDie = 5;
-		tickHungry = 7;
 	}
 }
 void Chicken::sounding() // menuliskan "Petok.. Petok.." ke layar ketika player melakukan Talk
@@ -82,4 +82,8 @@ char Chicken::render()
     } else {
         return 'I';
     }
+}
+
+bool Chicken::isDie() {
+	return tickDie <= 0;
 }

@@ -22,6 +22,7 @@
 #include "Product/ChickenOmelette.h"
 #include "Product/CowMeat.h"
 #include "Product/CowMilk.h"
+#include "Product/GoatMilk.h"
 #include "Product/DuckEgg.h"
 #include "Product/SheepMilk.h"
 #include "Product/GoatMeat.h"

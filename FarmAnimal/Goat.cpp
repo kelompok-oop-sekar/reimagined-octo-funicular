@@ -5,7 +5,7 @@
 
 string Goat::className = "Goat";
 
-Goat::Goat(int _x, int _y) : MilkProducingFarmAnimal(_x, _y, false), MeatProducingFarmAnimal(_x, _y, false), FarmAnimal(_x, _y)
+Goat::Goat(int _x, int _y) : MilkProducingFarmAnimal(_x, _y, true), MeatProducingFarmAnimal(_x, _y, true), FarmAnimal(_x, _y)
 {
 	tickDie = 5;
 	tickHungry = 8;
@@ -32,13 +32,13 @@ void Goat::moveAnimal() // method pergerakan Goat
 	}
 			break;
 	case 3: {
-		if ((FarmAnimal::y + 1) >= 6 && (FarmAnimal::y + 1 <= 7) && !isObjectExist(x, y + 1)) {
+		if ((FarmAnimal::y + 1) >= 0 && (FarmAnimal::y + 1 <= 2) && !isObjectExist(x, y + 1)) {
 			FarmAnimal::y++;
 		}
 	}
 			break;
 	case 4: {
-		if ((FarmAnimal::y - 1) >= 6 && (FarmAnimal::y - 1 <= 7) && !isObjectExist(x, y - 1)) {
+		if ((FarmAnimal::y - 1) >= 0 && (FarmAnimal::y - 1 <= 2) && !isObjectExist(x, y - 1)) {
 			FarmAnimal::y--;
 		}
 	}
@@ -62,12 +62,12 @@ bool Goat::isHungry() // true jika Goat dalam keadaan lapar
 void Goat::eat(LinkedList<Cell*> List)
 {
 	if (tickDie < 5) {
-		FarmAnimal::eat(List);
-		if (!MilkProducingFarmAnimal::milk && (Map[x][y] == '@' || Map[x][y] == '#' || Map[x][y] == '*')) {
+		if ((Map[x][y] == '@' || Map[x][y] == '#' || Map[x][y] == '*')) {
+			FarmAnimal::eat(List);
 			MilkProducingFarmAnimal::milk == true;
+			tickDie = 5;
+			tickHungry = 8;
 		}
-		tickDie = 5;
-		tickHungry = 8;
 	}
 }
 void Goat::sounding() // menuliskan "Mbeek.. Mbeek.." ke layar ketika player melakukan Talk
@@ -82,4 +82,8 @@ char Goat::render()
 	else {
 		return 'G';
 	}
+}
+
+bool Goat::isDie() {
+	return tickDie <= 0;
 }

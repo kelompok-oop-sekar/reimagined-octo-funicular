@@ -9,7 +9,7 @@ using namespace std;
 // ctor dengan kapasitas wadah air default.
 Player::Player() {
 	wateringCan = 5;
-	money = 5000;
+	money = 2500;
 	Product* a = new ChickenEgg();
 	inventory.add(a);
 	x = 4;
@@ -167,7 +167,7 @@ void Player::talk(LinkedList<FarmAnimal*> List, char direction) {
 
 //void interact(MilkProducingFarmAnimal& animal);
 
-void Player::interact(char dir) {
+void Player::interact(char dir, LinkedList<FarmAnimal*> List) {
 	int deltaX = 0;
 	int deltaY = 0;
 
@@ -198,12 +198,12 @@ void Player::interact(char dir) {
 			Product* prod;
 			string namaBarang;
 			int totalJual = 0;
-			for (int i = 0; i < size; i++) {
-				prod = inventory.get(i);
+			while (!inventory.isEmpty()) {
+				prod = inventory.get(0);
 				// namaBarang = prod->callGetClassName();
 				// namaBarang barang;
 				totalJual += prod->getPrice();
-				inventory.remove(i);
+				inventory.remove(0);
 			}
 			money += totalJual;
 			cout << "Semua isi inventory berhasil dijual" << endl;
@@ -212,6 +212,7 @@ void Player::interact(char dir) {
 	}
 	else if (Map[x + deltaX][y + deltaY] == 'W') {
 		wateringCan = 10;
+		money -= 500;
 	}
 	else if (Map[x + deltaX][y + deltaY] == 'M') {
 
@@ -237,6 +238,39 @@ void Player::interact(char dir) {
 			cout << "You don't have enough items in your inventory" << endl;
 		}
 
+	}
+	else if (Map[x + deltaX][y + deltaY] == 'I') {
+		for (int i = 0; i < List.getSize(); i++) {
+			if (List.get(i)->getX() == x + deltaX && List.get(i)->getY() == y + deltaY) {
+				if (List.get(i)->getEgg()) {
+					ChickenEgg* e = new ChickenEgg();
+					inventory.add(e);
+					List.get(i)->setEgg(false);
+				}
+			}
+		}
+	}
+	else if (Map[x + deltaX][y + deltaY] == 'G') {
+		for (int i = 0; i < List.getSize(); i++) {
+			if (List.get(i)->getX() == x + deltaX && List.get(i)->getY() == y + deltaY) {
+				if (List.get(i)->getMilk()) {
+					GoatMilk* e = new GoatMilk();
+					inventory.add(e);
+					List.get(i)->setMilk(false);
+				}
+			}
+		}
+	}
+	else if (Map[x + deltaX][y + deltaY] == 'S') {
+		for (int i = 0; i < List.getSize(); i++) {
+			if (List.get(i)->getX() == x + deltaX && List.get(i)->getY() == y + deltaY) {
+				if (List.get(i)->getMilk()) {
+					SheepMilk* e = new SheepMilk();
+					inventory.add(e);
+					List.get(i)->setMilk(false);
+				}
+			}
+		}
 	}
 }
 
@@ -373,11 +407,13 @@ void Player::control(LinkedList<FarmAnimal*>* List, LinkedList<Cell*> List2) {
 	else if (input == 'i') {
 		cout << "direction : ";
 		cin >> dir;
-		interact(dir);
+		interact(dir, *List);
 	}
 	else if (input == 'g') {
-		List2.get(y * 8 + x)->setGrass(true);
-		wateringCan--;
+		if (wateringCan > 0) {
+			List2.get(y * 8 + x)->setGrass(true);
+			wateringCan--;
+		}
 	}
 	else {
 		cout << "Invalid input" << endl;

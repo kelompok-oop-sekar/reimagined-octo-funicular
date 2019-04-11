@@ -28,6 +28,7 @@ class FarmAnimal : public Renderable {
       int getX();
       int getY();
       // method pergerakan hewan ternak
+	  virtual bool isDie() { return false; }
       virtual void moveAnimal()=0; 
       // true jika hewan ternak dalam keadaan lapar
       virtual bool isHungry()=0;
@@ -36,6 +37,10 @@ class FarmAnimal : public Renderable {
       // prosedur memakan rumput jika land yang dipijak berumput
       virtual void eat(LinkedList<Cell*> List);
 	  virtual string getClassName() { return ""; }
+	  virtual bool getMilk() { return false; }
+	  virtual bool getEgg() { return false; }
+	  virtual void setMilk(bool Milk) {}
+	  virtual void setEgg(bool Egg) {}
 };
 
 #endif
